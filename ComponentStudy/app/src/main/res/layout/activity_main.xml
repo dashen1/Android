@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btn_sqlite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sqlite"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/btn_broadcast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="broadcast"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/btn_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="service"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/btn_contentprovider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="contentprovider"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/btn_aidl_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="aidl service"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"/>
+</LinearLayout>
