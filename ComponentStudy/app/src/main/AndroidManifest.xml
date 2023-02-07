@@ -9,6 +9,7 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -37,6 +38,10 @@
         <activity android:name=".contentprovider.ContentProviderActivity" android:screenOrientation="portrait"/>
 
         <activity android:name=".aidl_service.AIDLActivity" android:screenOrientation="portrait"/>
+
+        <activity android:name=".lifecycle.LifecycleActivity" android:screenOrientation="portrait"/>
+
+        <activity android:name=".viewmodule.ViewModuleActivity" android:screenOrientation="sensor" />
 
 <!--        <receiver-->
 <!--            android:name=".broadcast.mBroadcastReceiver"-->
