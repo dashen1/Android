@@ -13,6 +13,8 @@
             <option value="$PROJECT_DIR$/aidl_client" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/architecture" />
+            <option value="$PROJECT_DIR$/fragment" />
+            <option value="$PROJECT_DIR$/thirdparty" />
           </set>
         </option>
       </GradleProjectSettings>

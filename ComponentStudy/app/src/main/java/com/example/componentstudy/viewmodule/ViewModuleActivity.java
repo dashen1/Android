@@ -13,6 +13,12 @@ import com.example.componentstudy.R;
 
 import java.util.Random;
 
+/**
+ * ViewModel 的生命周期从Activity create到 onDestroy, 和Activity生命周期一致
+ *
+ * 因为在屏幕旋转的时候，activity 会执行 onDestroy()方法，然后重新执行 onCreate()方法，
+ * 这就导致了屏幕旋转后显示的数据不一致
+ */
 public class ViewModuleActivity extends AppCompatActivity {
 
     private Score score;
@@ -37,7 +43,7 @@ public class ViewModuleActivity extends AppCompatActivity {
         System.out.println("ViewModuleActivity : onCreate");
 
         // viewmodule
-        scoreViewModel = new ViewModelProvider(this, new ViewModuleFactory()).get(ScoreViewModel.class);
+        scoreViewModel = new ViewModelProvider(this).get(ScoreViewModel.class);
 
         tv_score_viewmodel.setText("v:"+scoreViewModel.getScoreA());
     }
@@ -50,5 +56,11 @@ public class ViewModuleActivity extends AppCompatActivity {
     public void changeScoreViewModel(View view) {
         scoreViewModel.setScoreA(scoreViewModel.getScoreA()+new Random().nextInt(10));
         tv_score_viewmodel.setText("v:"+scoreViewModel.getScoreA());
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        System.out.println("ViewModuleActivity : onDestroy");
     }
 }

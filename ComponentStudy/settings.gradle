@@ -16,3 +16,5 @@ rootProject.name = "ComponentStudy"
 include ':app'
 include ':aidl_client'
 include ':architecture'
+include ':thirdparty'
+include ':fragment'
