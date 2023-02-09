@@ -8,24 +8,33 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.thirdparty.R;
+import com.example.thirdparty.retrofit.sample1.RetrofitClientSample1;
+import com.example.thirdparty.retrofit.sample1.RetrofitClientWithRxJava;
+import com.example.thirdparty.retrofit.sample1.ServiceApiSample1;
+import com.example.thirdparty.retrofit.sample1.UserLoginResult;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.reactivex.*;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
 public class RxJavaActivity extends AppCompatActivity {
 
+    private static final String TAG ="RxJavaActivity";
 
     @BindView(R.id.imageView)
     public ImageView imageView;
@@ -61,6 +70,36 @@ public class RxJavaActivity extends AppCompatActivity {
     @OnClick(R.id.btn_custom_rxjava)
     void rxJavaCustomTest(){
 
+    }
+
+    @SuppressLint("CheckResult")
+    @OnClick(R.id.btn_rxjava_retrofit)
+    void rxJavaRetrofitTest(){
+        RetrofitClientWithRxJava.getServiceApi().userLoginWithRxjava("coder123","coder123")
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<UserLoginResult>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        Log.i(TAG,"onSubscribe");
+                    }
+
+                    @Override
+                    public void onNext(UserLoginResult userLoginResult) {
+                        Log.i(TAG,"success");
+                        Log.i(TAG, userLoginResult.getData().getNickname());
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Log.i(TAG,"failed");
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
     }
 
     private Bitmap createWaterMark(Bitmap bitmap, String mark){
