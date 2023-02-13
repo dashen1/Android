@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.fragment.fragment.BackStackActivity;
 import com.example.fragment.fragment.BlankFragment;
 import com.example.fragment.fragment.BlankFragment2;
 import com.example.fragment.navigator.NavigatorActivity;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btn_tradition;
     private Button btn_navigation;
     private Button btn_viewpager;
+    private Button btn_back_stack;
 
 
     @Override
@@ -38,6 +40,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_viewpager = findViewById(R.id.btn_viewpager);
         btn_viewpager.setOnClickListener(this);
 
+        btn_back_stack = findViewById(R.id.btn_back_stack);
+        btn_back_stack.setOnClickListener(this);
+
     }
 
     @Override
@@ -51,6 +56,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_viewpager:
                 gotoActivity(ViewPagerActivity.class);
+                break;
+            case R.id.btn_back_stack:
+                gotoActivity(BackStackActivity.class);
                 break;
         }
     }

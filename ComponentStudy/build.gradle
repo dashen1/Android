@@ -1,17 +1,19 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-//buildscript {
-//    repositories {
-//        google()
-//    }
-//    dependencies {
-//        def nav_version = "2.5.3"
-//        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
-//    }
-//}
 
 plugins {
     id 'com.android.application' version '7.2.1' apply false
     id 'com.android.library' version '7.2.1' apply false
+}
+
+this.getMyAllProjects()
+def getMyAllProjects(){
+    this.getAllprojects().eachWithIndex{ Project p, int index ->
+        if (index == 0){
+            println("my root project:"+p.name)
+        }else{
+            println("my sub project:"+p.name)
+        }
+    }
 }
 
 task clean(type: Delete) {

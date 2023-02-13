@@ -67,6 +67,8 @@ public class TraditionActivity extends AppCompatActivity implements View.OnClick
         mCurrentFragment = fragment;
         // 判断此fragment是否已经添加到FragmentTransaction事务中
         if (!fragment.isAdded()) {
+            // fragment.getClass().getName() 添加tag标签，防止fragment引用因内存不足置为null,但还存在内存中，只是引用为null了，
+            // 不然会出现重叠现象
             ft.add(R.id.container, fragment, fragment.getClass().getName());
         } else {
             ft.show(fragment);

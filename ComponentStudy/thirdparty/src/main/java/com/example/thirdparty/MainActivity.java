@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.thirdparty.arouter.ArouterActivity;
 import com.example.thirdparty.okhttp.OkHttpActivity;
 import com.example.thirdparty.retrofit.RetrofitActivity;
 import com.example.thirdparty.rxjava.sample1.RxJavaActivity;
@@ -14,7 +15,7 @@ import com.example.thirdparty.rxjava.sample1.RxJavaActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     @BindView(R.id.btn_okhttp)
@@ -26,6 +27,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.btn_rxjava)
     public Button btn_rxjava;
 
+    @BindView(R.id.btn_arouter)
+    public Button btn_arouter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +40,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_okhttp.setOnClickListener(this);
         btn_retrofit.setOnClickListener(this);
         btn_rxjava.setOnClickListener(this);
+        btn_arouter.setOnClickListener(this);
+
 
     }
 
@@ -45,11 +51,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_okhttp:
                 gotoActivity(OkHttpActivity.class);
                 break;
-                case R.id.btn_retrofit:
+            case R.id.btn_retrofit:
                 gotoActivity(RetrofitActivity.class);
                 break;
-                case R.id.btn_rxjava:
+            case R.id.btn_rxjava:
                 gotoActivity(RxJavaActivity.class);
+                break;
+            case R.id.btn_arouter:
+                gotoActivity(ArouterActivity.class);
                 break;
         }
     }

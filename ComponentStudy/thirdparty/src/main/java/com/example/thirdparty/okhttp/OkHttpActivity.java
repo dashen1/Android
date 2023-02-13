@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.thirdparty.R;
 import com.example.thirdparty.okhttp.cacheinterceptor.CacheResponseInterceptor;
 import com.example.thirdparty.okhttp.cacheinterceptor.InternetCacheInterceptor;
@@ -35,9 +37,12 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
 
+@Route(path = OkHttpActivity.PATH)
 public class OkHttpActivity extends AppCompatActivity {
 
     private static final String TAG = "OkHttpActivity";
+
+    public static final String PATH = "/okhttp/OkHttpActivity";
 
 //    @BindView(R.id.btn_download)
 //    public Button btn_download;
@@ -131,6 +136,7 @@ public class OkHttpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_okhttp);
 
+        ARouter.getInstance().inject(this);
         ButterKnife.bind(this);
 
         PermissionX.init(OkHttpActivity.this)

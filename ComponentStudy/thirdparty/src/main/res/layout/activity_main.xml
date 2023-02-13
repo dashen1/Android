@@ -31,5 +31,13 @@
         android:layout_marginTop="20dp"
         android:text="rxjava"/>
 
+    <Button
+        android:id="@+id/btn_arouter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Arouter"/>
+
 
 </LinearLayout>

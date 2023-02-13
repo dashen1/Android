@@ -22,6 +22,7 @@
         <activity android:name=".navigator.NavigatorActivity" android:screenOrientation="portrait"/>
         <activity android:name=".tradition.TraditionActivity" android:screenOrientation="portrait"/>
         <activity android:name=".viewpager.ViewPagerActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".fragment.BackStackActivity" android:screenOrientation="portrait"/>
 
     </application>
 
