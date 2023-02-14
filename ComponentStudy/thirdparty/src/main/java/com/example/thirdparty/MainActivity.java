@@ -1,13 +1,14 @@
 package com.example.thirdparty;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.thirdparty.arouter.ArouterActivity;
+import com.example.thirdparty.dagger2.example2.Dagger2ExampleActivity;
 import com.example.thirdparty.okhttp.OkHttpActivity;
 import com.example.thirdparty.retrofit.RetrofitActivity;
 import com.example.thirdparty.rxjava.sample1.RxJavaActivity;
@@ -30,6 +31,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.btn_arouter)
     public Button btn_arouter;
 
+    @BindView(R.id.btn_dagger2)
+    public Button btn_dagger2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_retrofit.setOnClickListener(this);
         btn_rxjava.setOnClickListener(this);
         btn_arouter.setOnClickListener(this);
-
+        btn_dagger2.setOnClickListener(this);
 
     }
 
@@ -59,6 +63,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_arouter:
                 gotoActivity(ArouterActivity.class);
+                break;
+            case R.id.btn_dagger2:
+                gotoActivity(Dagger2ExampleActivity.class);
                 break;
         }
     }

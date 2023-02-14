@@ -33,6 +33,8 @@
         <activity android:name=".retrofit.RetrofitActivity"/>
         <activity android:name=".rxjava.sample1.RxJavaActivity"/>
         <activity android:name=".arouter.ArouterActivity"/>
+        <activity android:name=".dagger2.example2.Dagger2ExampleActivity"/>
+        <activity android:name=".dagger2.example2.Dagger2ExampleSecondActivity"/>
     </application>
 
 </manifest>

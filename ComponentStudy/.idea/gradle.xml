@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/architecture" />
             <option value="$PROJECT_DIR$/fragment" />
+            <option value="$PROJECT_DIR$/hilt" />
             <option value="$PROJECT_DIR$/thirdparty" />
           </set>
         </option>

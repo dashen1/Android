@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+
 }
 android {
     compileSdk 32
@@ -31,6 +32,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
+
 
 dependencies {
 
@@ -65,4 +67,7 @@ dependencies {
 
     implementation 'com.alibaba:arouter-api:1.5.2'
     annotationProcessor 'com.alibaba:arouter-compiler:1.5.2'
+
+
+
 }
