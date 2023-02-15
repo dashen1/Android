@@ -43,6 +43,8 @@
 
         <activity android:name=".viewmodule.ViewModuleActivity" android:screenOrientation="sensor" />
 
+        <activity android:name=".ormlite.OrmLiteActivity" android:screenOrientation="sensor" />
+
 <!--        <receiver-->
 <!--            android:name=".broadcast.mBroadcastReceiver"-->
 <!--            android:enabled="true"-->

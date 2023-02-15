@@ -62,4 +62,12 @@
         android:text="viewmodule"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/btn_ormlite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OrmLite"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"/>
 </LinearLayout>

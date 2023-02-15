@@ -1,0 +1,11 @@
+
+project.ext {
+
+    def dependVersion = [
+        ormVersion: "6.1"
+    ]
+
+    dependencies = [
+            "ormlite-android"       : "com.j256.ormlite:ormlite-android:${dependVersion.ormVersion}"
+    ]
+}

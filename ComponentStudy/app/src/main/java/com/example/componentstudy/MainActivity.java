@@ -13,6 +13,7 @@ import com.example.componentstudy.aidl_service.AIDLActivity;
 import com.example.componentstudy.broadcast.BroadcastActivity;
 import com.example.componentstudy.contentprovider.ContentProviderActivity;
 import com.example.componentstudy.lifecycle.LifecycleActivity;
+import com.example.componentstudy.ormlite.OrmLiteActivity;
 import com.example.componentstudy.service.ServiceActivity;
 import com.example.componentstudy.sqlite.SQLiteActivity;
 import com.example.componentstudy.viewmodule.ViewModuleActivity;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btn_aidl_service;
     private Button btn_lifecycle;
     private Button btn_viewmodule;
+    private Button btn_ormlite;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_aidl_service = findViewById(R.id.btn_aidl_service);
         btn_lifecycle = findViewById(R.id.btn_lifecycle);
         btn_viewmodule = findViewById(R.id.btn_viewmodule);
+        btn_ormlite = findViewById(R.id.btn_ormlite);
 
         btn_sqlite.setOnClickListener(this);
         btn_broadcast.setOnClickListener(this);
@@ -49,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_aidl_service.setOnClickListener(this);
         btn_lifecycle.setOnClickListener(this);
         btn_viewmodule.setOnClickListener(this);
+        btn_ormlite.setOnClickListener(this);
 
     }
 
@@ -75,6 +79,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_viewmodule:
                 gotoActivity(ViewModuleActivity.class);
+                break;
+            case R.id.btn_ormlite:
+                gotoActivity(OrmLiteActivity.class);
                 break;
         }
     }

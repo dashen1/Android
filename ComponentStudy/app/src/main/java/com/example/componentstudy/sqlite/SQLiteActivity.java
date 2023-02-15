@@ -71,4 +71,6 @@ public class SQLiteActivity extends AppCompatActivity {
         return index;
     }
 
+    public void orm_query(View view) {
+    }
 }
