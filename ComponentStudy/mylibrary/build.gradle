@@ -27,9 +27,35 @@ android {
 
 dependencies {
 
-    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.8.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    api("com.squareup.okhttp3:okhttp:4.10.0")
+    api("com.squareup.okhttp3:logging-interceptor:4.10.0")
+
+
+    api 'com.guolindev.permissionx:permissionx:1.6.4'
+
+    api 'com.squareup.retrofit2:retrofit:2.9.0'
+    api 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    api 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    api "io.reactivex.rxjava2:rxjava:2.2.21"
+
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+
+
+//    api 'com.jakewharton:butterknife:10.2.3'
+//    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+//    api 'com.github.bumptech.glide:glide:4.14.2'
+//    annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
+//
+//    api 'com.google.dagger:dagger:2.45'
+//    annotationProcessor 'com.google.dagger:dagger-compiler:2.45'
+//
+//    api 'com.alibaba:arouter-api:1.5.2'
+//    annotationProcessor 'com.alibaba:arouter-compiler:1.5.2'
 }

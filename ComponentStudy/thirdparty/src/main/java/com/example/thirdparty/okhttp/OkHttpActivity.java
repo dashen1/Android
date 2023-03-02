@@ -77,18 +77,18 @@ public class OkHttpActivity extends AppCompatActivity {
         call.enqueue(new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
-                Log.i(TAG,"onFailure");
+                Log.i(TAG, "onFailure");
             }
 
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
-                Log.i(TAG,"onResponse");
+                Log.i(TAG, "onResponse");
             }
         });
     }
 
     @OnClick(R.id.btn_download_cache)
-    void upLoadFileCache(){
+    void upLoadFileCache() {
         //自定义缓存（要求：有望 30s内请求读缓存，无网直接都缓存）
         //okhttp自带的扩展有坑
         //利用okhttp拦截器
@@ -111,13 +111,13 @@ public class OkHttpActivity extends AppCompatActivity {
         call.enqueue(new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
-                Log.i(TAG,"onFailure");
+                Log.i(TAG, "onFailure");
             }
 
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
-                Log.e(TAG,"response.body : "+response.body().string());
-                Log.e(TAG,response.cacheResponse()+" : "+response.networkResponse());
+                Log.e(TAG, "response.body : " + response.body().string());
+                Log.e(TAG, response.cacheResponse() + " : " + response.networkResponse());
             }
         });
     }
