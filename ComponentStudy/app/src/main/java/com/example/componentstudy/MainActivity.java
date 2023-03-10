@@ -14,6 +14,7 @@ import com.example.componentstudy.broadcast.BroadcastActivity;
 import com.example.componentstudy.contentprovider.ContentProviderActivity;
 import com.example.componentstudy.lifecycle.LifecycleActivity;
 import com.example.componentstudy.ormlite.OrmLiteActivity;
+import com.example.componentstudy.recyclerview.RecyclerActivity;
 import com.example.componentstudy.service.ServiceActivity;
 import com.example.componentstudy.sqlite.SQLiteActivity;
 import com.example.componentstudy.viewmodule.ViewModuleActivity;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btn_lifecycle;
     private Button btn_viewmodule;
     private Button btn_ormlite;
+    private Button btn_recycler;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_lifecycle = findViewById(R.id.btn_lifecycle);
         btn_viewmodule = findViewById(R.id.btn_viewmodule);
         btn_ormlite = findViewById(R.id.btn_ormlite);
+        btn_recycler = findViewById(R.id.btn_recycler);
 
         btn_sqlite.setOnClickListener(this);
         btn_broadcast.setOnClickListener(this);
@@ -53,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_lifecycle.setOnClickListener(this);
         btn_viewmodule.setOnClickListener(this);
         btn_ormlite.setOnClickListener(this);
+        btn_recycler.setOnClickListener(this);
 
     }
 
@@ -82,6 +86,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_ormlite:
                 gotoActivity(OrmLiteActivity.class);
+                break;
+            case R.id.btn_recycler:
+                gotoActivity(RecyclerActivity.class);
                 break;
         }
     }

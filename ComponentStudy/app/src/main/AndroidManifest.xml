@@ -45,6 +45,8 @@
 
         <activity android:name=".ormlite.OrmLiteActivity" android:screenOrientation="sensor" />
 
+        <activity android:name=".recyclerview.RecyclerActivity" android:screenOrientation="sensor" />
+
 <!--        <receiver-->
 <!--            android:name=".broadcast.mBroadcastReceiver"-->
 <!--            android:enabled="true"-->

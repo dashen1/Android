@@ -70,4 +70,12 @@
         android:text="OrmLite"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/btn_recycler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recycler View"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"/>
 </LinearLayout>
