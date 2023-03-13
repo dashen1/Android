@@ -2,8 +2,11 @@ package com.example.kotlin.data.error
 
 import java.lang.Exception
 
-class Error(val code:Int,val description:String){
-    constructor(exception: Exception):this(code= DEFAULT_ERROR, description = exception.message?:"")
+class Error(val code: Int, val description: String) {
+    constructor(exception: Exception) : this(
+        code = DEFAULT_ERROR,
+        description = exception.message ?: ""
+    )
 }
 
 const val NO_INTERNET_CONNECTION = -1
