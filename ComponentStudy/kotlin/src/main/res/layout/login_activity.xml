@@ -21,7 +21,7 @@
             android:layout_height="40dp"
             android:hint="账号"
             android:focusable="true"
-            android:text=""/>
+            android:text="coder@coder.coder"/>
 
         <EditText
             android:id="@+id/password"
@@ -29,7 +29,7 @@
             android:layout_height="40dp"
             android:hint="密码"
             android:focusable="true"
-            android:text=""/>
+            android:text="coder123"/>
 
         <Button
             android:id="@+id/login"

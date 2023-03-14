@@ -3,6 +3,8 @@
     package="com.example.kotlin">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".MyApp"
         android:allowBackup="true"
@@ -23,6 +25,8 @@
         </activity>
         <activity android:name=".ui.component.login.LoginActivity" android:screenOrientation="portrait"/>
         <activity android:name=".ui.component.main.MainCurrentActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.component.recipes.RecipesActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.component.details.DetailsActivity" android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

@@ -8,7 +8,7 @@ import com.example.kotlin.data.Resource
 import com.example.kotlin.data.dto.login.LoginResponse
 import com.example.kotlin.databinding.LoginActivityBinding
 import com.example.kotlin.ui.base.BaseActivity
-import com.example.kotlin.ui.component.main.MainCurrentActivity
+import com.example.kotlin.ui.component.recipes.RecipesActivity
 import com.example.kotlin.utils.*
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
@@ -70,7 +70,7 @@ class LoginActivity : BaseActivity() {
     }
 
     private fun navigateToMainScreen() {
-        val nextScreenIntent = Intent(this, MainCurrentActivity::class.java)
+        val nextScreenIntent = Intent(this, RecipesActivity::class.java)
         startActivity(nextScreenIntent)
         finish()
     }
