@@ -8,7 +8,7 @@
     android:contentDescription="@null"
     android:scaleType="centerInside"
     app:srcCompat="@drawable/ic_healthy_food"
-    tools:context=".ui.component.splash.SplashActivity">
+    tools:context=".ui.component.splash.SplashWithActivity">
 
 
 

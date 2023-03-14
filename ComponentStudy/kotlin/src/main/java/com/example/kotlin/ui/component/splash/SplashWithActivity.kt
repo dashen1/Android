@@ -11,12 +11,11 @@ import com.example.kotlin.ui.component.login.LoginActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class SplashActivity : BaseActivity() {
+class SplashWithActivity : BaseActivity() {
 
     private lateinit var binding: SplashActivityBinding
 
     override fun observeViewModel() {
-        TODO("Not yet implemented")
     }
 
     override fun initViewBinding() {

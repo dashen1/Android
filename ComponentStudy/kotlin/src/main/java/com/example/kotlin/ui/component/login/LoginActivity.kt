@@ -60,6 +60,11 @@ class LoginActivity : BaseActivity() {
             is Resource.Loading -> binding.loaderView.toVisible()
             is Resource.Success -> status.data?.let {
                 binding.loaderView.toGone()
+                navigateToMainScreen()
+            }
+            is Resource.DataError -> {
+                binding.loaderView.toGone()
+                status.errorCode?.let { loginViewModel.showToastMessage(it) }
             }
         }
     }
