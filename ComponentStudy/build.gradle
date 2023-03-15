@@ -2,11 +2,10 @@
 buildscript {
     apply from:"config.gradle"
     ext.kotlin_version = '1.4.21'
-    ext.hilt_version = '2.37'
+    ext.hilt_version = '2.38.1'
     dependencies {
-        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
         classpath 'com.android.tools.build:gradle:7.0.4'
-        classpath "com.google.dagger:hilt-android-gradle-plugin:2.38.1"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
     }
 }
 
@@ -21,30 +20,31 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-ext{
-    minSdkVersion = 21
-    targetSdkVersion = 31
-    compileSdkVersion = 31
-    buildToolsVersion = "30.0.2"
-    junitVersion = '5.7.0'
-    androidXJunitVersion = '1.1.3-alpha03'
-    assertjVersion = '3.19.0'
-    coreTestingVersion = '2.1.0'
-    espressoIntentsVersion = '3.3.0'
-    espressoVersion = '3.3.0'
-    coroutinesTestVersion = '1.4.2-native-mt'
-    appcompatVersion='1.2.0'
-    materialVersion= '1.3.0-rc01'
-    activityKtxVersion= '1.2.0-rc01'
-    retrofitVersion = '2.9.0'
-    moshiVersion = '1.11.0'
-    okhttpInterceptorVersion = '4.9.0'
-    mockVersion = '1.10.5'
-    annotationVersion ='1.1.0'
-    glid = '4.11.0'
-    hilt_viewmodels = '1.0.0-alpha03'
-    picassoVersion = '2.71828'
-    livedata_ktx='2.3.0'
-    constraintlayoutVersion = '2.1.4'
-    coroutines = '1.3.9'
-}
+//ext{
+//    minSdkVersion = 21
+//    targetSdkVersion = 31
+//    compileSdkVersion = 31
+//    buildToolsVersion = "30.0.2"
+//
+//    junitVersion = '5.7.0'
+//    androidXJunitVersion = '1.1.3-alpha03'
+//    assertjVersion = '3.19.0'
+//    coreTestingVersion = '2.1.0'
+//    espressoIntentsVersion = '3.3.0'
+//    espressoVersion = '3.3.0'
+//    coroutinesTestVersion = '1.4.2-native-mt'
+//    appcompatVersion='1.2.0'
+//    materialVersion= '1.3.0-rc01'
+//    activityKtxVersion= '1.2.0-rc01'
+//    retrofitVersion = '2.9.0'
+//    moshiVersion = '1.11.0'
+//    okhttpInterceptorVersion = '4.9.0'
+//    mockVersion = '1.10.5'
+//    annotationVersion ='1.1.0'
+//    glid = '4.11.0'
+//    hilt_viewmodels = '1.0.0-alpha03'
+//    picassoVersion = '2.71828'
+//    livedata_ktx='2.3.0'
+//    constraintlayoutVersion = '2.1.4'
+//    coroutines = '1.3.9'
+//}

@@ -47,6 +47,8 @@
 
         <activity android:name=".recyclerview.RecyclerActivity" android:screenOrientation="sensor" />
 
+        <activity android:name=".notify.NotifyActivity" android:screenOrientation="portrait" />
+
 <!--        <receiver-->
 <!--            android:name=".broadcast.mBroadcastReceiver"-->
 <!--            android:enabled="true"-->
@@ -70,6 +72,9 @@
         <service android:name=".service.MyService" android:exported="true"/>
 
         <service android:name=".aidl_service.PersonAidlService" android:exported="true"/>
+
+        <service android:name=".notify.service.MediaService"
+            android:process=":main"/>
 
         <provider
             android:name=".contentprovider.StudentsProvider"

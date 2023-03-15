@@ -1,11 +1,84 @@
-
 project.ext {
 
+    android = [
+            compileSdkVersion: 31,
+            buildToolsVersion: "30.0.2",
+            minSdkVersion    : 21,     //04 June 2021 JY update to 23 to follow official define,09 Mar 2021 Lily edit as 21 for using glideTransform lib; 17 Mar 2021 JY Removed glideTransform but remain min SDK as 21 because TiSDK will crash in SDK 19.
+            targetSdkVersion : 31,  // August 2020 google play require upper than 29
+            versionCode      : 1,
+            versionName      : "1.0",
+            minifySetting    : false,
+    ]
+
+
     def dependVersion = [
-        ormVersion: "6.1"
+            kotlin_version   : "1.4.21",
+            hilt_version     : "2.38.1",
+            appcompat        : "1.2.0",
+            orm              : "6.1",
+            junit            : "5.7.0",
+            androidXJunit    : '1.1.3-alpha03',
+            assertj          : '3.19.0',
+            coreTesting      : '2.1.0',
+            espressoIntents  : '3.3.0',
+            espresso         : '3.3.0',
+            coroutinesTest   : '1.4.2-native-mt',
+            material         : '1.3.0-rc01',
+            activityKtx      : '1.2.0-rc01',
+            retrofit         : '2.9.0',
+            moshi            : "1.11.0",
+            okhttpInterceptor: "4.9.0",
+            mock             : "1.10.5",
+            annotation       : "1.1.0",
+            glide            : "4.11.0",
+            hilt_viewmodels  : "1.0.0-alpha03",
+            picasso          : "2.71828",
+            livedata_ktx     : "2.3.0",
+            constraintlayout : "2.1.4",
+            coroutines       : "1.3.9",
     ]
 
     dependencies = [
-            "ormlite-android"       : "com.j256.ormlite:ormlite-android:${dependVersion.ormVersion}"
+            "ormlite_android"         : "com.j256.ormlite:ormlite-android:${dependVersion.orm}",
+
+            //basic
+            "appcompat"               : "androidx.appcompat:appcompat:${dependVersion.appcompat}",
+            "material"                : "com.google.android.material:material:${dependVersion.material}",
+            "annotation"              : "androidx.annotation:annotation:${dependVersion.annotation}",
+            "constraintlayout"        : "androidx.constraintlayout:constraintlayout:${dependVersion.constraintlayout}",
+
+            "livedata_ktx"            : "androidx.lifecycle:lifecycle-livedata-ktx:${dependVersion.livedata_ktx}",
+            "junit_ktx"               : "androidx.test.ext:junit-ktx:${dependVersion.androidXJunit}",
+            "kotlin_stdlib"           : "org.jetbrains.kotlin:kotlin-stdlib:${dependVersion.kotlin_version}",
+            "kotlin_reflect"          : "org.jetbrains.kotlin:kotlin-reflect:${dependVersion.kotlin_version}",
+            "activity_ktx"            : "androidx.activity:activity-ktx:${dependVersion.activityKtx}",
+            "picasso"                 : "com.squareup.picasso:picasso:${dependVersion.picasso}",
+
+            /**-------------------testing libs------------------------------------------**/
+            "junit_jupiter_engine"    : "org.junit.jupiter:junit-jupiter-engine:${dependVersion.junit}",
+            "mockk"                   : "io.mockk:mockk:${dependVersion.mock}",
+            "assertj_core"            : "org.assertj:assertj-core:${dependVersion.assertj}",
+            "espresso_intents"        : "androidx.test.espresso:espresso-intents:${dependVersion.espressoIntents}",
+            "kotlinx_coroutines_test" : "org.jetbrains.kotlinx:kotlinx-coroutines-test:${dependVersion.coroutinesTest}",
+            "core_testing"            : "androidx.arch.core:core-testing:${dependVersion.coreTesting}",
+            "espresso_idling_resource": "androidx.test.espresso:espresso-idling-resource:${dependVersion.espresso}",
+            "espresso_contrib"        : "androidx.test.espresso:espresso-contrib:${dependVersion.espresso}n",
+            "junit"                   : "junit:junit:${dependVersion.junit}",
+            "androidXJunit"           : "androidx.test.ext:junit:${dependVersion.androidXJunit}",
+            "espresso_core"           : "androidx.test.espresso:espresso-core:${dependVersion.espresso}",
+
+
+            // retrofit
+            "moshi"                   : "com.squareup.moshi:moshi:${dependVersion.moshi}",
+            "converter_moshi"         : "com.squareup.retrofit2:converter-moshi:${dependVersion.retrofit}",
+            "moshi_kotlin_codegen"    : "com.squareup.moshi:moshi-kotlin-codegen:${dependVersion.moshi}",
+            "logging_interceptor"     : "com.squareup.okhttp3:logging-interceptor:${dependVersion.okhttpInterceptor}",
+            "glide"                   : "com.github.bumptech.glide:glide:${dependVersion.glide}",
+
+            // hilt
+            "hilt_android"            : "com.google.dagger:hilt-android:${dependVersion.hilt_version}",
+            "hilt_android_compiler"   : "com.google.dagger:hilt-android-compiler:${dependVersion.hilt_version}",
+            "hilt_lifecycle_viewmodel": "androidx.hilt:hilt-lifecycle-viewmodel:${dependVersion.hilt_viewmodels}"
+
     ]
 }
