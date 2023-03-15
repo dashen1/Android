@@ -36,6 +36,7 @@ project.ext {
             livedata_ktx     : "2.3.0",
             constraintlayout : "2.1.4",
             coroutines       : "1.3.9",
+            rxpermissions    : "0.12"
     ]
 
     dependencies = [
@@ -78,7 +79,9 @@ project.ext {
             // hilt
             "hilt_android"            : "com.google.dagger:hilt-android:${dependVersion.hilt_version}",
             "hilt_android_compiler"   : "com.google.dagger:hilt-android-compiler:${dependVersion.hilt_version}",
-            "hilt_lifecycle_viewmodel": "androidx.hilt:hilt-lifecycle-viewmodel:${dependVersion.hilt_viewmodels}"
+            "hilt_lifecycle_viewmodel": "androidx.hilt:hilt-lifecycle-viewmodel:${dependVersion.hilt_viewmodels}",
+
+            "rxpermissions"           : "com.github.tbruyelle:rxpermissions:${dependVersion.rxpermissions}"
 
     ]
 }

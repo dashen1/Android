@@ -1,5 +1,6 @@
 package com.example.componentstudy;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -103,5 +104,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void gotoActivity(Class<?> clazz) {
         Intent intent = new Intent(this, clazz);
         startActivity(intent);
+    }
+
+    private void checkPermissions(){
+
     }
 }

@@ -27,11 +27,14 @@ android {
 
 dependencies {
 
-    implementation 'androidx.appcompat:appcompat:1.5.1'
-    implementation 'com.google.android.material:material:1.8.0'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    def androidDependencies = rootProject.ext.dependencies
+
+    implementation androidDependencies.appcompat
+    implementation androidDependencies.material
+    implementation androidDependencies.constraintlayout
+    testImplementation androidDependencies.junit
+    androidTestImplementation androidDependencies.junit
+    androidTestImplementation androidDependencies.espresso_core
 
     api("com.squareup.okhttp3:okhttp:4.10.0")
     api("com.squareup.okhttp3:logging-interceptor:4.10.0")
