@@ -55,6 +55,9 @@ dependencies {
     implementation 'com.jakewharton:butterknife:10.2.3'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
 
+    // media
+    implementation "androidx.media:media:1.6.0"
+
     // RxPermission
     // implementation androidDependencies.rxpermissions
 }
