@@ -17,6 +17,8 @@
             <option value="$PROJECT_DIR$/architecture" />
             <option value="$PROJECT_DIR$/av_module" />
             <option value="$PROJECT_DIR$/demo" />
+            <option value="$PROJECT_DIR$/exoplayer_common" />
+            <option value="$PROJECT_DIR$/exoplayer_music" />
             <option value="$PROJECT_DIR$/fragment" />
             <option value="$PROJECT_DIR$/hilt" />
             <option value="$PROJECT_DIR$/kotlin" />
