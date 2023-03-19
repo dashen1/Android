@@ -4,14 +4,16 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    def androidVersion = rootProject.ext.android
+
+    compileSdk androidVersion.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.example.av_module"
-        minSdk 21
-        targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        applicationId "com.example.kotlin"
+        minSdk androidVersion.minSdkVersion
+        targetSdk androidVersion.targetSdkVersion
+        versionCode androidVersion.versionCode
+        versionName androidVersion.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -34,7 +36,7 @@ android {
 dependencies {
     def androidDependencies = rootProject.ext.dependencies
 
-    implementation 'androidx.core:core-ktx:1.7.0'
+    // implementation 'androidx.core:core-ktx:1.7.0'
     implementation androidDependencies.appcompat
     implementation androidDependencies.material
     implementation androidDependencies.constraintlayout

@@ -3,14 +3,16 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    def androidVersion = rootProject.ext.android
+
+    compileSdk androidVersion.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.example.architecture"
-        minSdk 21
-        targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        applicationId "com.example.kotlin"
+        minSdk androidVersion.minSdkVersion
+        targetSdk androidVersion.targetSdkVersion
+        versionCode androidVersion.versionCode
+        versionName androidVersion.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

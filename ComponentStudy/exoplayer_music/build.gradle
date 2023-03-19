@@ -6,12 +6,12 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 30
 
     defaultConfig {
         applicationId "com.example.exoplayer_music"
         minSdk 21
-        targetSdk 32
+        targetSdk 30
         versionCode 1
         versionName "1.0"
 
@@ -31,33 +31,30 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
 }
 
 dependencies {
 
     def androidDependencies = rootProject.ext.dependencies
-    //android support
-    // implementation "androidx.core:core-ktx:1.7.0"
-    implementation androidDependencies.appcompat
-    implementation androidDependencies.material
-    implementation androidDependencies.constraintlayout
-
-    testImplementation androidDependencies.junit
-    androidTestImplementation androidDependencies.junit
-    androidTestImplementation androidDependencies.espresso_core
-
-    implementation androidDependencies.espresso_idling_resource
-
 
     implementation "com.android.support:multidex:$multidex_version"
 
     implementation project(':exoplayer_common')
 
+    implementation 'com.google.android.material:material:1.4.0'
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
+    implementation "androidx.appcompat:appcompat:$androidx_app_compat_version"
     implementation "androidx.fragment:fragment-ktx:$fragment_version"
     implementation "androidx.recyclerview:recyclerview:$recycler_view_version"
 
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
     implementation "androidx.lifecycle:lifecycle-extensions:$arch_lifecycle_version"
 
     // Glide dependencies

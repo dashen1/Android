@@ -3,14 +3,16 @@ plugins {
 
 }
 android {
-    compileSdk 32
+    def androidVersion = rootProject.ext.android
+
+    compileSdk androidVersion.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.example.thirdparty"
-        minSdk 21
-        targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        applicationId "com.example.kotlin"
+        minSdk androidVersion.minSdkVersion
+        targetSdk androidVersion.targetSdkVersion
+        versionCode androidVersion.versionCode
+        versionName androidVersion.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -61,8 +63,8 @@ dependencies {
 
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
 
-    implementation 'com.github.bumptech.glide:glide:4.14.2'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
+    implementation "com.github.bumptech.glide:glide:$glide_version}"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
 
     implementation 'com.google.dagger:dagger:2.45'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.45'

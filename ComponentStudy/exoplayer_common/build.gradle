@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 30
 
     defaultConfig {
         minSdk 21
-        targetSdk 32
+        targetSdk 30
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -33,19 +33,6 @@ android {
 
 dependencies {
 
-    def androidDependencies = rootProject.ext.dependencies
-    //android support
-    // implementation "androidx.core:core-ktx:1.7.0"
-    implementation androidDependencies.appcompat
-    implementation androidDependencies.material
-    implementation androidDependencies.constraintlayout
-
-    testImplementation androidDependencies.junit
-    androidTestImplementation androidDependencies.junit
-    androidTestImplementation androidDependencies.espresso_core
-
-    implementation androidDependencies.espresso_idling_resource
-
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_version"
     api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_version"
@@ -53,7 +40,6 @@ dependencies {
     api "androidx.media:media:$androidx_media_version"
 
     api "com.google.code.gson:gson:$gson_version"
-
     if (findProject(':exoplayer-library-core') != null) {
         api project(':exoplayer-library-core')
         api project(':exoplayer-library-ui')
