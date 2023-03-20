@@ -4,6 +4,7 @@ import android.net.Uri
 import android.support.v4.media.MediaBrowserCompat
 import android.support.v4.media.MediaDescriptionCompat
 import android.support.v4.media.MediaMetadataCompat
+import android.util.Log
 import com.example.exoplayer_common.media.extensions.*
 import com.google.android.exoplayer2.C
 import com.google.gson.Gson
@@ -37,8 +38,15 @@ internal class JsonSource(private val source: Uri) : AbstractMusicSource() {
     override fun iterator(): Iterator<MediaMetadataCompat> = catalog.iterator()
 
     override suspend fun load() {
-        updateCatalog(source)?.let {
-
+        updateCatalog(source)?.let { updateCatalog ->
+            catalog = updateCatalog
+            iterator().forEach { item ->
+                Log.d(TAG,"catalog : ${item.description.title}")
+            }
+            state = STATE_INITIALIZED
+        } ?: run {
+            catalog = emptyList()
+            state = STATE_ERROR
         }
     }
 
@@ -187,3 +195,5 @@ class JsonMusic {
     var duration: Long = C.TIME_UNSET
     var site: String = ""
 }
+
+private const val TAG = "JsonSource"

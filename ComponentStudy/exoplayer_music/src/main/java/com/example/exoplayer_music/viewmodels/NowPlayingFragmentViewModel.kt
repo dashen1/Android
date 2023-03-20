@@ -16,9 +16,9 @@ import com.example.exoplayer_common.media.extensions.*
 import com.example.exoplayer_music.R
 
 class NowPlayingFragmentViewModel(
-    private val app:Application,
+    private val app: Application,
     musicServiceConnection: MusicServiceConnection
-):AndroidViewModel(app){
+) : AndroidViewModel(app) {
 
     /**
      * Utility class used to represent the metadata necessary to display the
@@ -26,27 +26,27 @@ class NowPlayingFragmentViewModel(
      */
 
     data class NowPlayingMetadata(
-        val id:String,
-        val albumArtUri:Uri,
-        val title:String?,
-        val subtitle:String?,
-        val duration:String
-    ){
-        companion object{
+        val id: String,
+        val albumArtUri: Uri,
+        val title: String?,
+        val subtitle: String?,
+        val duration: String
+    ) {
+        companion object {
             /**
              * Utility method to convert milliseconds to a display of minutes and seconds.
              */
-            fun timestampToMSS(context: Context,position:Long):String{
-                val totalSeconds = Math.floor(position/1E3).toInt()
-                val minutes =totalSeconds/60
-                val remainingSeconds = totalSeconds-(minutes*60)
-                return if (position<0) "--:--"
-                else "%d:%02d".format(minutes,remainingSeconds)
+            fun timestampToMSS(context: Context, position: Long): String {
+                val totalSeconds = Math.floor(position / 1E3).toInt()
+                val minutes = totalSeconds / 60
+                val remainingSeconds = totalSeconds - (minutes * 60)
+                return if (position < 0) context.getString(R.string.duration_unknown)
+                else context.getString(R.string.duration_format).format(minutes, remainingSeconds)
             }
         }
     }
 
-    private var playbackState:PlaybackStateCompat = EMPTY_PLAYBACK_STATE
+    private var playbackState: PlaybackStateCompat = EMPTY_PLAYBACK_STATE
     val mediaMetadata = MutableLiveData<NowPlayingMetadata>()
     val mediaPosition = MutableLiveData<Long>().apply {
         postValue(0L)
@@ -58,14 +58,14 @@ class NowPlayingFragmentViewModel(
     private var updatePosition = true
     private val handler = Handler(Looper.getMainLooper())
 
-    private val playbackStateObserver = Observer<PlaybackStateCompat>{
-        playbackState = it?: EMPTY_PLAYBACK_STATE
-        val metadata = musicServiceConnection.nowPlaying.value?: NOTHING_PLAYING
-        updateState(playbackState,metadata)
+    private val playbackStateObserver = Observer<PlaybackStateCompat> {
+        playbackState = it ?: EMPTY_PLAYBACK_STATE
+        val metadata = musicServiceConnection.nowPlaying.value ?: NOTHING_PLAYING
+        updateState(playbackState, metadata)
     }
 
     private val mediaMetadataObserver = Observer<MediaMetadataCompat> {
-        updateState(playbackState,it)
+        updateState(playbackState, it)
     }
 
     private val musicServiceConnection = musicServiceConnection.also {
@@ -74,9 +74,9 @@ class NowPlayingFragmentViewModel(
         checkPlaybackPosition()
     }
 
-    private fun checkPlaybackPosition():Boolean = handler.postDelayed({
+    private fun checkPlaybackPosition(): Boolean = handler.postDelayed({
         val currentPosition = playbackState.currentPlayBackPosition
-        if (mediaPosition.value!=currentPosition)
+        if (mediaPosition.value != currentPosition)
             mediaPosition.postValue(currentPosition)
         if (updatePosition)
             checkPlaybackPosition()
@@ -93,14 +93,14 @@ class NowPlayingFragmentViewModel(
     private fun updateState(
         playbackState: PlaybackStateCompat,
         mediaMetadata: MediaMetadataCompat
-    ){
-        if (mediaMetadata.duration!=0L&&mediaMetadata.id!=null){
+    ) {
+        if (mediaMetadata.duration != 0L && mediaMetadata.id != null) {
             val nowPlayingMetadata = NowPlayingMetadata(
                 mediaMetadata.id!!,
                 mediaMetadata.albumArtUri,
                 mediaMetadata.title?.trim(),
                 mediaMetadata.displaySubtitle?.trim(),
-                NowPlayingMetadata.timestampToMSS(app,mediaMetadata.duration)
+                NowPlayingMetadata.timestampToMSS(app, mediaMetadata.duration)
             )
             this.mediaMetadata.postValue(nowPlayingMetadata)
         }
@@ -117,7 +117,7 @@ class NowPlayingFragmentViewModel(
     class Factory(
         private val app: Application,
         private val musicServiceConnection: MusicServiceConnection
-    ):ViewModelProvider.NewInstanceFactory(){
+    ) : ViewModelProvider.NewInstanceFactory() {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
             return NowPlayingFragmentViewModel(app, musicServiceConnection) as T
         }

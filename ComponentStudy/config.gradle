@@ -12,7 +12,7 @@ project.ext {
 
 
     def dependVersion = [
-            kotlin_version   : "1.4.21",
+            kotlin_version   : "1.6.10",
             hilt_version     : "2.38.1",
             appcompat        : "1.5.0",
             orm              : "6.1",

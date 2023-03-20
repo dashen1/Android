@@ -1,8 +1,12 @@
 package com.example.exoplayer_common.media.library
 
+import android.content.ContentResolver
 import android.content.Context
+import android.content.res.Resources
+import android.net.Uri
 import android.support.v4.media.MediaBrowserCompat
 import android.support.v4.media.MediaMetadataCompat
+import android.util.Log
 import com.example.exoplayer_common.R
 import com.example.exoplayer_common.media.MusicService
 import com.example.exoplayer_common.media.extensions.*
@@ -32,19 +36,28 @@ class BrowseTree(
     init {
         val rootList = mediaIdToChildren[UAMP_BROWSABLE_ROOT] ?: mutableListOf()
 
+        val r:Resources = context.resources
+        val uriRecommended:Uri = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://"
+                + r.getResourcePackageName(R.drawable.ic_recommended) + "/"
+                + r.getResourceTypeName(R.drawable.ic_recommended) + "/"
+                + r.getResourceEntryName(R.drawable.ic_recommended))
+
+        val uriAlbums:Uri = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://"
+                + r.getResourcePackageName(R.drawable.ic_album) + "/"
+                + r.getResourceTypeName(R.drawable.ic_album) + "/"
+                + r.getResourceEntryName(R.drawable.ic_album))
+
+        Log.d(TAG,"uri : $uriRecommended")
         val recommendedMetadata = MediaMetadataCompat.Builder().apply {
             id = UAMP_RECOMMENDED_ROOT
             title = context.getString(R.string.recommended_title)
-            albumArtUri = RESOURCE_ROOT_URI +
-                    context.resources.getResourceEntryName(R.drawable.ic_recommended)
-            flag = MediaBrowserCompat.MediaItem.FLAG_BROWSABLE
+            albumArtUri = uriRecommended.toString()
         }.build()
 
         val albumMetadata = MediaMetadataCompat.Builder().apply {
             id = UAMP_ALBUMS_ROOT
             title = context.getString(R.string.albums_title)
-            albumArtUri = RESOURCE_ROOT_URI +
-                    context.resources.getResourceEntryName(R.drawable.ic_album)
+            albumArtUri = uriAlbums.toString()
             flag = MediaBrowserCompat.MediaItem.FLAG_BROWSABLE
         }.build()
 
@@ -103,4 +116,5 @@ const val UAMP_RECENT_ROOT = "__RECENT__"
 
 const val MEDIA_SEARCH_SUPPORTED = "android.media.browse.SEARCH_SUPPORTED"
 
-const val RESOURCE_ROOT_URI = "android.resource://com.example.android.uamp.next/drawable/"
+const val RESOURCE_ROOT_URI = "android.resource://com.example.exoplayer_common/drawable/"
+private const val TAG = "BrowseTree"

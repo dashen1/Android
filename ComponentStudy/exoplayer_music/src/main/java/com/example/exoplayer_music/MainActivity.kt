@@ -2,6 +2,7 @@ package com.example.exoplayer_music
 
 import android.media.AudioManager
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -79,6 +80,7 @@ class MainActivity : AppCompatActivity() {
     private fun navigateToMediaItem(mediaId: String) {
         var fragment: MediaItemFragment? = getBrowserFragment(mediaId)
         if (fragment == null) {
+            Log.d(TAG,"navigateToMediaItem")
             fragment = MediaItemFragment.newInstance(mediaId)
             // If this is not the top level media (root), we add it to the fragment
             // back stack, so that actionbar toggle and back will work appropriately.
@@ -91,5 +93,6 @@ class MainActivity : AppCompatActivity() {
     private fun getBrowserFragment(mediaId: String): MediaItemFragment? {
         return supportFragmentManager.findFragmentByTag(mediaId) as? MediaItemFragment
     }
-
 }
+
+private const val TAG = "MainActivity"

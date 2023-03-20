@@ -3,6 +3,7 @@ package com.example.exoplayer_music.utils
 import android.app.Application
 import android.content.ComponentName
 import android.content.Context
+import android.util.Log
 import com.example.exoplayer_common.common.MusicServiceConnection
 import com.example.exoplayer_common.media.MusicService
 import com.example.exoplayer_music.viewmodels.MainActivityViewModel
@@ -11,6 +12,7 @@ import com.example.exoplayer_music.viewmodels.NowPlayingFragmentViewModel
 
 object InjectorUtils {
     private fun provideMusicServiceConnection(context: Context): MusicServiceConnection {
+        Log.d(TAG,"context package :${context.packageName}")
         return MusicServiceConnection.getInstance(
             context,
             ComponentName(context, MusicService::class.java)
@@ -39,3 +41,5 @@ object InjectorUtils {
         )
     }
 }
+
+private const val TAG = "InjectorUtils"

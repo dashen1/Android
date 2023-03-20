@@ -1,5 +1,6 @@
 package com.example.exoplayer_music
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -13,7 +14,7 @@ import com.example.exoplayer_common.R
 
 class MediaItemAdapter(
     private val itemClickedListener: (MediaItemData) -> Unit
-) : ListAdapter<MediaItemData, MediaViewHolder>(MediaItemData.diffCallback){
+) : ListAdapter<MediaItemData, MediaViewHolder>(MediaItemData.diffCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MediaViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = FragmentMediaitemBinding.inflate(inflater, parent, false)
@@ -50,6 +51,7 @@ class MediaItemAdapter(
             holder.subtitleView.text = mediaItem.subtitle
             holder.playbackState.setImageResource(mediaItem.playbackRes)
 
+            Log.d(TAG, "albumArtUri : ${mediaItem.albumArtUri}")
             Glide.with(holder.albumArt)
                 .load(mediaItem.albumArtUri)
                 .placeholder(R.drawable.default_art)
@@ -66,8 +68,8 @@ class MediaItemAdapter(
 class MediaViewHolder(
     binding: FragmentMediaitemBinding,
     itemClickedListener: (MediaItemData) -> Unit
-):RecyclerView.ViewHolder(binding.root){
-    val titleView:TextView = binding.title
+) : RecyclerView.ViewHolder(binding.root) {
+    val titleView: TextView = binding.title
     val subtitleView: TextView = binding.subtitle
     val albumArt: ImageView = binding.albumArt
     val playbackState: ImageView = binding.itemState
@@ -80,3 +82,5 @@ class MediaViewHolder(
         }
     }
 }
+
+private const val TAG = "MediaItemAdapter"

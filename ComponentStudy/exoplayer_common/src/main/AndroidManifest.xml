@@ -15,7 +15,7 @@
 
         <provider
             android:name=".media.library.AlbumContentProvider"
-            android:authorities="com.example.android.uamp"
+            android:authorities="com.example.exoplayer_common"
             android:exported="true" />
     </application>
 

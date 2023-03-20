@@ -10,6 +10,7 @@ import android.support.v4.media.MediaDescriptionCompat
 import com.bumptech.glide.Glide
 import com.example.exoplayer_common.media.extensions.asAlbumArtContentUri
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 internal class PersistentStorage private constructor(val context: Context) {
 
@@ -32,7 +33,8 @@ internal class PersistentStorage private constructor(val context: Context) {
     }
 
     suspend fun saveRecentSong(description: MediaDescriptionCompat, position: Long) {
-        with(Dispatchers.IO) {
+
+        withContext(Dispatchers.IO) {
             val localIconUri = Glide.with(context).asFile().load(description.iconUri)
                 .submit(NOTIFICATION_LARGE_ICON_SIZE, NOTIFICATION_LARGE_ICON_SIZE).get()
                 .asAlbumArtContentUri()

@@ -9,6 +9,7 @@ import com.example.exoplayer_common.media.extensions.isPlayEnabled
 import com.example.exoplayer_common.media.extensions.isPlaying
 import com.example.exoplayer_common.media.extensions.isPrepared
 import com.example.exoplayer_music.MediaItemData
+import com.example.exoplayer_music.fragment.NowPlayingFragment
 import com.example.exoplayer_music.utils.Event
 
 /**
@@ -21,6 +22,7 @@ class MainActivityViewModel(private val musicServiceConnection: MusicServiceConn
 
     val rootMediaId: LiveData<String> =
         Transformations.map(musicServiceConnection.isConnected) { isConnected ->
+            Log.d(TAG,"rootMediaId isConnected : $isConnected")
             if (isConnected) {
                 musicServiceConnection.rootMediaId
             } else {
@@ -42,7 +44,8 @@ class MainActivityViewModel(private val musicServiceConnection: MusicServiceConn
         if (clickedItem.browsable) {
             browserToItem(clickedItem)
         }else{
-
+            playMedia(clickedItem, pauseAllowed = false)
+            showFragment(NowPlayingFragment.newInstance())
         }
     }
 

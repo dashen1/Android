@@ -22,7 +22,7 @@ internal class AlbumContentProvider : ContentProvider() {
             val path = uri.encodedPath?.substring(1)?.replace('/', ':') ?: return Uri.EMPTY
             val contentUri = Uri.Builder()
                 .scheme(ContentResolver.SCHEME_CONTENT)
-                .authority("com.example.android.uamp")
+                .authority("com.example.exoplayer_common")
                 .path(path)
                 .build()
             uriMap[contentUri] = uri
@@ -40,7 +40,7 @@ internal class AlbumContentProvider : ContentProvider() {
 
         if (!file.exists()) {
             // Use Glide to download the album art
-            var cacheFile = Glide.with(context)
+            val cacheFile = Glide.with(context)
                 .asFile()
                 .load(remoteUri)
                 .submit()

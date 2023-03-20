@@ -1,6 +1,7 @@
 package com.example.exoplayer_music.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,12 +18,12 @@ import com.example.exoplayer_music.viewmodels.MediaItemFragmentViewModel
 /**
  * A fragment representing a list of MediaItems
  */
-class MediaItemFragment:Fragment(){
+class MediaItemFragment : Fragment() {
 
-    private lateinit var mediaId:String
-    private lateinit var binding:FragmentMediaitemListBinding
+    private lateinit var mediaId: String
+    private lateinit var binding: FragmentMediaitemListBinding
 
-    private val mainActivityViewModel by activityViewModels<MainActivityViewModel>{
+    private val mainActivityViewModel by activityViewModels<MainActivityViewModel> {
         InjectorUtils.provideMainActivityViewModel(requireContext())
     }
 
@@ -30,15 +31,15 @@ class MediaItemFragment:Fragment(){
         InjectorUtils.provideMediaItemFragmentViewModel(requireContext(), mediaId)
     }
 
-    private val listAdapter = MediaItemAdapter{ clickedItem->
+    private val listAdapter = MediaItemAdapter { clickedItem ->
         mainActivityViewModel.mediaItemClicked(clickedItem)
     }
 
-    companion object{
-        fun newInstance(mediaId:String):MediaItemFragment{
+    companion object {
+        fun newInstance(mediaId: String): MediaItemFragment {
             return MediaItemFragment().apply {
                 arguments = Bundle().apply {
-                    putSerializable(MEDIA_ID_ARG,mediaId)
+                    putSerializable(MEDIA_ID_ARG, mediaId)
                 }
             }
         }
@@ -49,7 +50,7 @@ class MediaItemFragment:Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentMediaitemListBinding.inflate(inflater,container,false)
+        binding = FragmentMediaitemListBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -57,22 +58,25 @@ class MediaItemFragment:Fragment(){
         super.onActivityCreated(savedInstanceState)
 
         // Always true, but lets lint know that as well
-        mediaId=arguments?.getString(MEDIA_ID_ARG)?:return
+        mediaId = arguments?.getString(MEDIA_ID_ARG) ?: return
         mediaItemFragmentViewModel.mediaItems.observe(viewLifecycleOwner,
-        Observer{ list->
-            binding.loadingSpinner.visibility =
-                if (list?.isNotEmpty()==true) View.GONE else View.VISIBLE
-            listAdapter.submitList(list)
-        })
+            Observer { list ->
+                binding.loadingSpinner.visibility =
+                    if (list?.isNotEmpty() == true) View.GONE else View.VISIBLE
+                listAdapter.submitList(list)
+                list.forEach { item->
+                    Log.d(TAG,"list : ${item.title}")
+                }
+            })
         mediaItemFragmentViewModel.networkError.observe(viewLifecycleOwner,
-        Observer{error->
-           if (error){
-               binding.loadingSpinner.visibility = View.GONE
-               binding.networkError.visibility = View.VISIBLE
-           }else{
-               binding.networkError.visibility = View.GONE
-           }
-        })
+            Observer { error ->
+                if (error) {
+                    binding.loadingSpinner.visibility = View.GONE
+                    binding.networkError.visibility = View.VISIBLE
+                } else {
+                    binding.networkError.visibility = View.GONE
+                }
+            })
 
         // Set the adapter
         binding.list.adapter = listAdapter
@@ -81,3 +85,4 @@ class MediaItemFragment:Fragment(){
 }
 
 private const val MEDIA_ID_ARG = "com.example.android.uamp.fragments.MediaItemFragment.MEDIA_ID"
+private const val TAG = "MediaItemFragment"
