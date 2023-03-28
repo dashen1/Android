@@ -19,10 +19,12 @@ public class CameraFilter extends AbstractFboFilter {
     public void initGL(Context context, int vertexShaderId, int fragmentShaderId) {
         super.initGL(context, vertexShaderId, fragmentShaderId);
         vMatrix = GLES20.glGetUniformLocation(program, "vMatrix");
+        Log.d(TAG,"initGL");
     }
 
     @Override
     public int onDraw(int texture, FilterChain filterChain) {
+        Log.d(TAG,"onDraw");
         return super.onDraw(texture, filterChain);
     }
 

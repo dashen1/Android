@@ -1,0 +1,56 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.vtech.mobile.kidichat.nldut"
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures{
+        viewBinding = true
+        dataBinding = true
+    }
+
+    sourceSets {
+        main {
+            res.srcDirs = ['src/main/res']
+            jniLibs.srcDirs = ['jniLibs']
+        }
+    }
+}
+
+dependencies {
+
+
+    def androidDependencies = rootProject.ext.dependencies
+    //android support
+    implementation androidDependencies.appcompat
+    implementation androidDependencies.material
+    implementation androidDependencies.constraintlayout
+
+    testImplementation androidDependencies.junit
+    androidTestImplementation androidDependencies.junit
+    androidTestImplementation androidDependencies.espresso_core
+
+    implementation files('libs/ti-sdk.aar')
+}

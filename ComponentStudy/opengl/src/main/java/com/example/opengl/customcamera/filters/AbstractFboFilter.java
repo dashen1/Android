@@ -12,6 +12,13 @@ public class AbstractFboFilter extends AbstractFilter{
     int[] frameBuffer;
     int[] frameTexture;
 
+    private int viewport_offset_x = 0;
+    private int viewport_offset_y = 0;
+
+    private int viewport_width = 0;
+    private int viewport_height = 0;
+
+
     public AbstractFboFilter(Context context, int vertexShaderId, int fragmentShaderId) {
         super(context, vertexShaderId, fragmentShaderId);
     }
@@ -43,6 +50,8 @@ public class AbstractFboFilter extends AbstractFilter{
         FilterContext filterContext = filterChain.filterContext;
         createFBO(filterContext.width, filterContext.height);
         GLES20.glBindFramebuffer(GLES20.GL_FRAMEBUFFER, frameBuffer[0]);
+        //设置绘制区域
+
         super.onDraw(texture, filterChain);
         Log.d(TAG,"beforeDraw");
         GLES20.glBindFramebuffer(GLES20.GL_FRAMEBUFFER, 0);
