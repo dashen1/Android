@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ResourceName">
+
+    <declare-styleable name="RecordCircleView">
+        <attr name="rcv_back_round_color" format="color" />
+        <attr name="rcv_thin_ring_width" format="dimension" />
+        <attr name="rcv_thin_ting_color" format="color" />
+        <attr name="rcv_animate_ring_width" format="dimension" />
+        <attr name="rcv_animate_ring_color" format="color" />
+        <attr name="rcv_btn_border_size" format="dimension" />
+        <attr name="rcv_btn_color" format="color" />
+        <attr name="rcv_btn_action" format="integer">
+            <enum name="click" value="0" />
+            <enum name="hold" value="1" />
+        </attr>
+    </declare-styleable>
+
+</resources>

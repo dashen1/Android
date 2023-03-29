@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="uiwidget_margin_medium">8dp</dimen>
+    <dimen name="uiwidget_dots_size_small">10dp</dimen>
+    <dimen name="uiwidget_login_tv_welcome">30sp</dimen>
+    <dimen name="uiwidget_login_tv_signin">15sp</dimen>
+    <dimen name="uiwidget_foot_corners">30dp</dimen>
+    <dimen name="uiwidget_btn_corners">200dp</dimen>
+    <dimen name="uiwidget_square_avatar_border_size">6px</dimen>
+    <dimen name="uiwidget_top_text_size">5sp</dimen>
+    <dimen name="uiwidget_squ_avatar_nickname_text_size">5sp</dimen>
+    <dimen name="uiwidget_squ_avatar_nickname_text_padding_top">0dp</dimen>
+    <dimen name="uiwidget_btn_border_size">6dp</dimen>
+    <dimen name="uiwidget_new_msg_dot_text_size">10sp</dimen>
+    <dimen name="uiwidget_new_msg_dot_size">24dp</dimen>
+    <dimen name="uiwidget_new_msg_dot_size_small">10dp</dimen>
+
+    <dimen name="uiwidget_video_progress_stroke_width">2dp</dimen>
+    <dimen name="uiwidget_video_record_thin_ring_width">4dp</dimen>
+    <dimen name="uiwidget_video_record_animate_ring_width">8dp</dimen>
+    <dimen name="uiwidget_video_record_btn_border">8dp</dimen>
+    <dimen name="uiwidget_vrv_ring_max_width">8dp</dimen>
+    <dimen name="uiwidget_civ_nickname_text_size">6sp</dimen>
+    <dimen name="uiwidget_civ_last_msg_text_size">5sp</dimen>
+    <dimen name="uiwidget_civ_time_text_size">3sp</dimen>
+
+    <dimen name="uiwidget_chat_msg_text_size_small">14sp</dimen>
+    <dimen name="uiwidget_chat_msg_text_size_medium">16sp</dimen>
+    <dimen name="uiwidget_chat_msg_img_size">150dp</dimen>
+    <dimen name="uiwidget_chat_msg_loading_size">25dp</dimen>
+
+    <dimen name="uiwidget_chat_item_sender_nick_max_width">80dp</dimen>
+    <dimen name="uiwidget_chat_item_margin_left">5dp</dimen>
+    <dimen name="uiwidget_chat_item_last_text_with_icon_width">45dp</dimen>
+
+    <dimen name="uiwidget_avatar_corners">20dp</dimen>
+
+    <!--    Record Audio Fragment-->
+    <dimen name="record_btn_animation_width">8dp</dimen>
+    <dimen name="record_btn_inter_width">8dp</dimen>
+
+    <dimen name="home_mask_height">100dp</dimen>
+</resources>

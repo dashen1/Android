@@ -7,4 +7,32 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="uiwidget_color_test">#cd3dea</color>
+    <color name="uiwidget_color_accent">#03DAC5</color>
+    <color name="uiwidget_color_white">#FFFFFF</color>
+    <color name="uiwidget_color_black">#000000</color>
+    <color name="uiwidget_color_btn_red">#E34858</color>
+    <color name="uiwidget_color_transparent">#00FFFFFF</color>
+    <color name="uiwidget_color_avatar_nick_name_gray">#A0808080</color>
+    <color name="uiwidget_color_top_back_translucent">#50FFFFFF</color>
+    <color name="uiwidget_color_bottom_back_translucent">#80FFFFFF</color>
+    <color name="uiwidget_color_avatar_new_msg">#F9C937</color>
+    <color name="uiwidget_color_chat_msg_bubble_default_color">#FDE3B9</color>
+    <color name="uiwidget_color_btn_default">#5A46E0</color>
+    <color name="uiwidget_color_video_num_line_default">#5a46e0</color>
+    <color name="uiwidget_color_video_num_line_read">#7F7F7F</color>
+    <color name="uiwidget_color_video_num_line_current_playing">#a264ff</color>
+    <color name="uiwidget_color_video_progress_default">#C4C2BE</color>
+    <color name="uiwidget_color_audio_progress_default">#C4C4C4</color>
+    <color name="uiwidget_color_video_progress_progress">#FFFFFF</color>
+    <color name="uiwidget_color_video_progress_stroke">#3038232B</color>
+    <color name="uiwidget_color_video_ring_back">#999999</color>
+    <color name="uiwidget_color_voice_ripples_back">#C7C4CC</color>
+    <color name="uiwidget_color_voice_ripples_ring">#F4F3F5</color>
+    <color name="uiwidget_color_chat_item_line">#EAEAEA</color>
+
+    <!--    home screen-->
+    <color name="record_button">#5A46E0</color>
+    <color name="record_button_middle_color">#00FFFFFF</color>
 </resources>
