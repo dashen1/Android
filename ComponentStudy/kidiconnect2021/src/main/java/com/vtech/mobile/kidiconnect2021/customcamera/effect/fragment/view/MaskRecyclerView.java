@@ -2,11 +2,14 @@ package com.vtech.mobile.kidiconnect2021.customcamera.effect.fragment.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.vtech.mobile.kidiconnect2021.customview.MaskSnapHelper;
 
 public class MaskRecyclerView extends RecyclerView {
 
@@ -20,6 +23,8 @@ public class MaskRecyclerView extends RecyclerView {
     private boolean matched;
     private boolean isSliding;
 
+    private MaskSnapHelper maskSnapHelper;
+
     public MaskRecyclerView(@NonNull Context context) {
         this(context,null);
     }
@@ -31,6 +36,10 @@ public class MaskRecyclerView extends RecyclerView {
     public MaskRecyclerView(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initRecycleView();
+    }
+
+    public void setMaskSnapHelper(MaskSnapHelper maskSnapHelper) {
+        this.maskSnapHelper = maskSnapHelper;
     }
 
     private void initRecycleView() {
@@ -89,7 +98,10 @@ public class MaskRecyclerView extends RecyclerView {
     }
 
     private void maskTrigger() {
-
+        LayoutManager layoutManager = this.getLayoutManager();
+        View view = maskSnapHelper.findSnapView(layoutManager);
+        int position = layoutManager.getPosition(view);
+        Log.d(TAG,"position : "+position);
     }
 
     public static interface OnItemTriggerListener {

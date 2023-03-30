@@ -5,10 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.databinding.DataBindingUtil;
-import androidx.databinding.ViewDataBinding;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.vtech.mobile.kidiconnect2021.customcamera.effect.fragment.EffectFragment;
+import com.vtech.mobile.kidiconnect2021.customcamera.utils.ActivityUtils;
 import com.vtech.mobile.kidiconnect2021.customview.RecordCircleView;
 import com.vtech.mobile.kidiconnect2021.databinding.ActivityMainBinding;
 import com.vtech.mobile.kidiconnect2021.viewmodel.HomeViewModel;
@@ -61,6 +61,7 @@ public class MainActivity extends PermissionActivity implements View.OnClickList
         }
         maskTime = System.currentTimeMillis();
         if(Boolean.TRUE.equals(homeViewModel.getIsMaskVisible().getValue())){
+            // close mask
             homeViewModel.getIsMaskVisible().setValue(false);
             if (effectFragment != null) {
                 effectFragment.setUserClickToClose(true);
@@ -68,13 +69,16 @@ public class MainActivity extends PermissionActivity implements View.OnClickList
                 effectFragment = null;
             }
         }else {
+            // show mask
             homeViewModel.getIsMaskVisible().setValue(true);
             // 碎片
-           // effectFragment = new EffectFragment();
+           effectFragment = new EffectFragment();
             // 显示碎片
-            //ActivityUtils.addFragmentToActivity(getSupportFragmentManager(), effectFragment, R.id.home_mask_list);
+            ActivityUtils.addFragmentToActivity(getSupportFragmentManager(), effectFragment, R.id.fl_mask_list);
         }
     }
+
+
 
     @Override
     public boolean onCircleBarClick() {

@@ -60,7 +60,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/btn_record"
             app:layout_constraintBottom_toBottomOf="@id/btn_record"
-            android:background="@{homeViewModel.maskOpen?}"
+            android:background="@drawable/video_facemask"
             app:layout_constraintHorizontal_bias="0.5" />
 
         <FrameLayout

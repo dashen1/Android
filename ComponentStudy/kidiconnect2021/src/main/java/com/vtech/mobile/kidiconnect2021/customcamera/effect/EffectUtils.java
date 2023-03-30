@@ -3,6 +3,7 @@ package com.vtech.mobile.kidiconnect2021.customcamera.effect;
 import android.content.Context;
 import android.util.Log;
 
+import com.vtech.mobile.kidiconnect2021.customcamera.effect.load.base.EffectConstant;
 import com.vtech.mobile.kidiconnect2021.customcamera.effect.load.base.EffectModel;
 import com.vtech.mobile.kidiconnect2021.customcamera.utils.UIHelper;
 
@@ -29,4 +30,18 @@ public class EffectUtils {
         Log.d("setEffect", "setEffect");
         TiSDKManager.getInstance().setMask(model.getName());
     }
+
+
+    public static void cancelEffectShow(boolean record) {
+        TiSDKManager.getInstance().setMask("");
+        TiSDKManager.getInstance().setSticker("");
+        if (record) {
+            EffectContext.setClickedType(EffectConstant.TYPE_MASK);
+            EffectContext.setMaskNameLatest("");
+            EffectContext.setStickerNameLatest("");
+        }
+        Log.d("EffectUtils", "cancelEffectShow");
+    }
+
+
 }

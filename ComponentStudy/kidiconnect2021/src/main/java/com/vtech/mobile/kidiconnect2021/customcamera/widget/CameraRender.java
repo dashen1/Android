@@ -64,7 +64,7 @@ public class CameraRender implements GLSurfaceView.Renderer {
         List<AbstractFilter> filters = new ArrayList<>();
         filters.add(new CameraFilter(context));
         filters.add(new StickerFilter(context));
-        filters.add(new WaterMarkFilter(context));
+        // filters.add(new WaterMarkFilter(context));
         filters.add(new ScreenFilter(context));
         filterChain = new FilterChain(new FilterContext(), filters, 0);
         if (recordingEnabled) {
