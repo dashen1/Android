@@ -27,7 +27,7 @@ public class FileManagerUtil {
     public FileManagerUtil() {
     }
 
-    static void initFilePath(Context context) {
+    public static void initFilePath(Context context) {
         if (context == null) {
             Log.w("FileManagerUtil", "initFilePath, params is null.");
         } else {

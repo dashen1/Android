@@ -214,6 +214,7 @@ public class EffectContext {
             iconFilter(modelMap);
             // 把modelMap中读到的数据进行排序
             List<EffectModel> models = orderList(modelMap);
+            Log.d(TAG,"models : "+models.size());
             // 排序后的数据装载到modelList中
             modelList.clear();
             modelList.addAll(models);
@@ -331,19 +332,30 @@ public class EffectContext {
         try {
             if (model.isFileAvailable()) {
                 if (model.isMask()) {
+                    Log.d(TAG,"===========================");
                     Log.d(TAG,"model.getName() : "+model.getName());
+                    Log.d(TAG,"model type : "+model.getType());
+                    Log.d(TAG,"============================");
                     TiSDKManager.getInstance().setMask(model.getName());
                     TiSDKManager.getInstance().setSticker("");
                     maskNameLatest = model.getName();
                     stickerNameLatest = "";
                     clickedType = EffectConstant.TYPE_MASK;
                 } else if (model.isSticker()) {
+                    Log.d(TAG,"===========================");
+                    Log.d(TAG,"model.getName() : "+model.getName());
+                    Log.d(TAG,"model type : "+model.getType());
+                    Log.d(TAG,"============================");
                     TiSDKManager.getInstance().setSticker(model.getName());
                     TiSDKManager.getInstance().setMask("");
                     maskNameLatest = "";
                     stickerNameLatest = model.getName();
                     clickedType = EffectConstant.TYPE_STICKER;
                 } else if (model.isComb()) {
+                    Log.d(TAG,"===========================");
+                    Log.d(TAG,"model.getName() : "+model.getName());
+                    Log.d(TAG,"model type : "+model.getType());
+                    Log.d(TAG,"============================");
                     TiSDKManager.getInstance().setSticker(model.getName());
                     TiSDKManager.getInstance().setMask(model.getName());
                     maskNameLatest = model.getName();

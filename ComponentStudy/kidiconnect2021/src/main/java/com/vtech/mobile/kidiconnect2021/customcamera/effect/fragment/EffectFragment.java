@@ -124,12 +124,12 @@ public class EffectFragment extends Fragment {
     public void onStop() {
         super.onStop();
         if (userClickToClose) {
-            EffectContext.notifyCloseEffectFragment();
+            // EffectContext.notifyCloseEffectFragment();
         } else {
             try {
                 // 关闭列表时，把所有的特效都关闭了
-                TiSDKManager.getInstance().setSticker("");
-                TiSDKManager.getInstance().setMask("");
+//                TiSDKManager.getInstance().setSticker("");
+//                TiSDKManager.getInstance().setMask("");
             } catch (Exception ignored) {
 
             }
@@ -145,7 +145,9 @@ public class EffectFragment extends Fragment {
         List<ImageAdapter.ItemModel> itemModels = new ArrayList<>(EffectContext.getModelList().size());
 
         for (int i = 0; i < EffectContext.getModelList().size(); i++) {
-            Log.d(TAG,"ItemModel : "+EffectContext.getModelList().get(i));
+            EffectModel model = EffectContext.getModelList().get(i);
+            Log.d(TAG,"ItemModel Name : "+model.getName());
+            Log.d(TAG,"ItemModel Thumb : "+model.getThumb());
             itemModels.add(new ImageAdapter.ItemModel(EffectContext.getModelList().get(i)));
         }
 
@@ -181,8 +183,8 @@ public class EffectFragment extends Fragment {
         int iconWidth = EffectUtils.getItemSizeComp(maskRecyclerView.getContext(), pageSize, 100);
 
         manager.scrollToPositionWithOffset(0, -itemWidth / 2);
-        EffectUtils.setEffect(itemModels.get(0).getModel());
-
+        //EffectUtils.setEffect(itemModels.get(0).getModel());
+        //TiSDKManager.getInstance().setMask("CatR");
         // ================================== 设置列表显示的宽高 ==========================================
 
         // 设置中间位置圆环的大小

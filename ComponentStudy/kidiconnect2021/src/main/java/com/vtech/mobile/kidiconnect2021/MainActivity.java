@@ -51,7 +51,7 @@ public class MainActivity extends PermissionActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_mask:
-                closeOrOpenMask();
+                // closeOrOpenMask();
         }
     }
 

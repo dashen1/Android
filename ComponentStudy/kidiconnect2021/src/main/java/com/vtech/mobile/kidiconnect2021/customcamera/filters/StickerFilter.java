@@ -26,7 +26,7 @@ public class StickerFilter extends AbstractFboFilter {
                 drawTiRotation,//TiRotation枚举，图像顺时针旋转的角度
                 false//图像是否左右镜像
       );
-        return super.onDraw(textureId, filterChain);
+        return filterChain.process(textureId);
     }
 
 }

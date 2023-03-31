@@ -20,4 +20,6 @@ public class PermissionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         ActivityCompat.requestPermissions(this, permission, 100);
     }
+
+
 }

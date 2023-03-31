@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.vtech.mobile.kidiconnect2021.R;
+import com.vtech.mobile.kidiconnect2021.customcamera.effect.EffectContext;
 import com.vtech.mobile.kidiconnect2021.customcamera.effect.fragment.view.MaskRecyclerView;
 import com.vtech.mobile.kidiconnect2021.customcamera.effect.load.base.EffectModel;
 import com.vtech.mobile.kidiconnect2021.customcamera.utils.UIHelper;
@@ -32,10 +33,14 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
     private volatile int itemWidth = -1;
     private volatile int iconWidth = -1;
 
+    private volatile long triggerTime = 0L;
+    private volatile String triggerTag = "";
+
     public ImageAdapter(Context context, MaskRecyclerView recyclerView, List<ItemModel> itemModels) {
         this.mContext = context;
         this.maskRecyclerView = recyclerView;
         this.modelList = itemModels;
+        recyclerView.setTriggerListener(this);
     }
 
     @NonNull
@@ -51,12 +56,15 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         int pos = holder.getLayoutPosition() % modelList.size();
         ItemModel itemModel = modelList.get(pos);
         // 设置icon图片
-        holder.iconView.setImageResource(R.drawable.icon_cat);
+        holder.iconView.setImageDrawable(getIconDrawable(itemModel));
+
+
 
         // ======================= 位置关系绑定 ==================================
         // 设置对应ItemModel
-//        holder.itemView.setTag(itemModel.model.getName());
-//        itemModel.setViewHolder(holder);
+        holder.itemView.setTag(itemModel.model.getName());
+        holder.setBindingEffectName(itemModel.getModel().getName());
+        itemModel.setViewHolder(holder);
         try {
             if (itemWH == -1) {
                 int widthPixels = holder.iconView.getContext().getResources().getDisplayMetrics().widthPixels;
@@ -108,6 +116,11 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         }
     }
 
+    public Drawable getIconDrawable(final ItemModel itemModel) {
+
+        return Drawable.createFromPath(itemModel.getModel().getThumbPath());
+    }
+
     @Override
     public int getItemCount() {
         return modelList.size()*100;
@@ -115,7 +128,44 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
 
     @Override
     public void onTriggerAfterSlide(View mainItemView) {
+        try {
+            long interval = System.currentTimeMillis() - triggerTime;
+            String tag = (String) mainItemView.getTag();
+            // 避免短时间内快速重复设置mask，导致卡死
+            if (interval <= 180L && triggerTag.equals(tag)) {
+                return;
+            }
 
+            triggerTag = tag;
+            triggerTime = System.currentTimeMillis();
+            ItemModel itemModel = getItemModelByName(tag);
+            if (itemModel == null) {
+                return;
+            }
+            enableEffect(itemModel, true);
+        }catch (Exception e){
+            Log.d(TAG, "trigger: error :" + e.getMessage());
+        }
+    }
+
+    private void enableEffect(ItemModel itemModel, boolean isMainEffect) {
+        if (isMainEffect){
+            currentMainMask = itemModel.getModel().getName();
+        }
+        try {
+            //EffectContext.startToShowEffect(itemModel.getModel());
+        } catch (Exception e) {
+            Log.e(TAG, "set mask,error: " + e.getMessage());
+        }
+    }
+
+    private ItemModel getItemModelByName(String name) {
+        for (ItemModel item : modelList) {
+            if (item.model.getName().equals(name)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override
@@ -127,6 +177,10 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
 
         private ImageView iconView;
         private String bindingEffectName = "";
+
+        public void setBindingEffectName(String bindingEffectName) {
+            this.bindingEffectName = bindingEffectName;
+        }
 
         public ImageViewHolder(@NonNull View itemView) {
             super(itemView);

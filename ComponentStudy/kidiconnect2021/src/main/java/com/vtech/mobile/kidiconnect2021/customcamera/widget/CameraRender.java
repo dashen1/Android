@@ -21,6 +21,8 @@ import java.util.List;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
+import cn.tillusory.sdk.TiSDKManager;
+
 public class CameraRender implements GLSurfaceView.Renderer {
 
     private final String TAG = "CameraRender";
@@ -64,7 +66,7 @@ public class CameraRender implements GLSurfaceView.Renderer {
         List<AbstractFilter> filters = new ArrayList<>();
         filters.add(new CameraFilter(context));
         filters.add(new StickerFilter(context));
-        // filters.add(new WaterMarkFilter(context));
+        filters.add(new WaterMarkFilter(context));
         filters.add(new ScreenFilter(context));
         filterChain = new FilterChain(new FilterContext(), filters, 0);
         if (recordingEnabled) {

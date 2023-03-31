@@ -1,0 +1,227 @@
+{
+  "info": {
+    "location": "at server",
+    "file_version": 1.01,
+    "icon_file_version": 1.01,
+    "facial_data_version": 1.01,
+    "icon_data": {
+      "url": "Data/KCData/MasksData/CAeng/icon.zip"
+    }
+  },
+  "mask_list": [
+    {
+      "datafolder": "empty_effect",
+      "builtinflag": true,
+      "dataname": "empty_effect",
+      "thumb": "empty_gray.png",
+      "type": "mask",
+      "url": "",
+      "ordernumber": 0,
+      "version": 0.001
+    },
+    {
+      "datafolder": "DogR",
+      "builtinflag": true,
+      "dataname": "DogR",
+      "thumb": "icon_S_Dog.png",
+      "type": "mask",
+      "url": "Data/KCData/MasksData/CAeng/mask/DogR.zip",
+      "ordernumber": 6,
+      "version": 0.001
+    },
+    {
+      "datafolder": "CatR",
+      "builtinflag": true,
+      "dataname": "CatR",
+      "thumb": "icon_S_Cat.png",
+      "type": "mask",
+      "url": "Data/KCData/MasksData/CAeng/mask/CatR.zip",
+      "ordernumber": 9,
+      "version": 0.001
+    },
+    {
+      "datafolder": "Man_BeardR",
+      "builtinflag": true,
+      "dataname": "Man_BeardR",
+      "thumb": "icon_S_Beard.png",
+      "type": "mask",
+      "url": "Data/KCData/MasksData/CAeng/mask/Man_BeardR.zip",
+      "ordernumber": 15,
+      "version": 0.001
+    }
+  ],
+  "sticker_list": [
+    {
+      "datafolder": "RabbitR",
+      "builtinflag": true,
+      "dataname": "RabbitR",
+      "thumb": "icon_S_Rabbit.png",
+      "type": "sticker",
+      "url": "Data/KCData/MasksData/CAeng/sticker/RabbitR.zip",
+      "ordernumber": 17,
+      "version": 0.001
+    },
+    {
+      "datafolder": "PilotR",
+      "builtinflag": true,
+      "dataname": "PilotR",
+      "thumb": "icon_S_Pilot.png",
+      "type": "sticker",
+      "url": "Data/KCData/MasksData/CAeng/sticker/PilotR.zip",
+      "ordernumber": 18,
+      "version": 0.001
+    },
+    {
+      "datafolder": "SurpriseR",
+      "builtinflag": true,
+      "dataname": "SurpriseR",
+      "thumb": "icon_S_Surprise.png",
+      "type": "sticker",
+      "url": "Data/KCData/MasksData/CAeng/sticker/SurpriseR.zip",
+      "ordernumber": 19,
+      "version": 0.001
+    },
+    {
+      "datafolder": "AlieneyesR",
+      "builtinflag": true,
+      "dataname": "AlieneyesR",
+      "thumb": "icon_S_Alieneyes.png",
+      "type": "sticker",
+      "url": "Data/KCData/MasksData/CAeng/sticker/AlieneyesR.zip",
+      "ordernumber": 20,
+      "version": 0.001
+    },
+    {
+      "datafolder": "HappyR",
+      "builtinflag": true,
+      "dataname": "HappyR",
+      "thumb": "icon_S_Happy.png",
+      "type": "sticker",
+      "url": "Data/KCData/MasksData/CAeng/sticker/HappyR.zip",
+      "ordernumber": 1,
+      "version": 0.001
+    },
+    {
+      "datafolder": "ButterflyR",
+      "builtinflag": true,
+      "dataname": "ButterflyR",
+      "thumb": "icon_S_Butterfly.png",
+      "type": "sticker",
+      "url": "Data/KCData/MasksData/CAeng/sticker/ButterflyR.zip",
+      "ordernumber": 2,
+      "version": 0.001
+    },
+    {
+      "datafolder": "PartyR",
+      "builtinflag": true,
+      "dataname": "PartyR",
+      "thumb": "icon_S_Party.png",
+      "type": "sticker",
+      "url": "Data/KCData/MasksData/CAeng/sticker/PartyR.zip",
+      "ordernumber": 3,
+      "version": 0.001
+    },
+    {
+      "datafolder": "GogglesR",
+      "builtinflag": true,
+      "dataname": "GogglesR",
+      "thumb": "icon_S_Goggles.png",
+      "type": "sticker",
+      "url": "Data/KCData/MasksData/CAeng/sticker/GogglesR.zip",
+      "ordernumber": 4,
+      "version": 0.001
+    },
+    {
+      "datafolder": "FunnyfaceR",
+      "builtinflag": true,
+      "dataname": "FunnyfaceR",
+      "thumb": "icon_S_Funny.png",
+      "type": "sticker",
+      "url": "Data/KCData/MasksData/CAeng/sticker/FunnyfaceR.zip",
+      "ordernumber": 5,
+      "version": 0.001
+    },
+    {
+      "datafolder": "PolygonalR",
+      "builtinflag": true,
+      "dataname": "PolygonalR",
+      "thumb": "icon_S_Polygonal.png",
+      "type": "sticker",
+      "url": "Data/KCData/MasksData/CAeng/sticker/PolygonalR.zip",
+      "ordernumber": 7,
+      "version": 0.001
+    },
+    {
+      "datafolder": "buddyR",
+      "builtinflag": true,
+      "dataname": "buddyR",
+      "thumb": "icon_S_Buddy.png",
+      "type": "sticker",
+      "url": "Data/KCData/MasksData/CAeng/sticker/buddyR.zip",
+      "ordernumber": 8,
+      "version": 0.001
+    },
+    {
+      "datafolder": "SadR",
+      "builtinflag": true,
+      "dataname": "SadR",
+      "thumb": "icon_S_Sad.png",
+      "type": "sticker",
+      "url": "Data/KCData/MasksData/CAeng/sticker/SadR.zip",
+      "ordernumber": 10,
+      "version": 0.001
+    },
+    {
+      "datafolder": "LOLR",
+      "builtinflag": true,
+      "dataname": "LOLR",
+      "thumb": "icon_S_Lol.png",
+      "type": "sticker",
+      "url": "Data/KCData/MasksData/CAeng/sticker/LOLR.zip",
+      "ordernumber": 14,
+      "version": 0.001
+    },
+    {
+      "datafolder": "Woman_HairR",
+      "builtinflag": true,
+      "dataname": "Woman_HairR",
+      "thumb": "icon_S_Woman.png",
+      "type": "sticker",
+      "url": "Data/KCData/MasksData/CAeng/sticker/Woman_HairR.zip",
+      "ordernumber": 16,
+      "version": 0.001
+    }
+  ],
+  "comb_list": [
+    {
+      "datafolder": "Celebrate_combR",
+      "builtinflag": true,
+      "dataname": "Celebrate_combR",
+      "thumb": "icon_S_Celebrate.png",
+      "type": "comb",
+      "url": "Data/KCData/MasksData/CAeng/comb/Celebrate_combR.zip",
+      "ordernumber": 11,
+      "version": 0.001
+    },
+    {
+      "datafolder": "Freeze_combR",
+      "builtinflag": true,
+      "dataname": "Freeze_combR",
+      "thumb": "icon_S_Freeze.png",
+      "type": "comb",
+      "url": "Data/KCData/MasksData/CAeng/comb/Freeze_combR.zip",
+      "ordernumber": 12,
+      "version": 0.001
+    },
+    {
+      "datafolder": "Angry_combR",
+      "builtinflag": true,
+      "dataname": "Angry_combR",
+      "thumb": "icon_S_Angry.png",
+      "type": "comb",
+      "url": "Data/KCData/MasksData/CAeng/comb/Angry_combR.zip",
+      "ordernumber": 13,
+      "version": 0.001
+    }
+  ]
+}

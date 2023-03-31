@@ -91,9 +91,7 @@ public class CameraSurfaceView extends GLSurfaceView implements GLSurfaceView.Re
             cameraService.startPreview();
             // 如果要开启对焦，则调用openAutoFocus，该方法会创建一个定时器，每个一段时间的对焦一下
 
-            String path = "";
-            TiSDKManager.getInstance().setMask("CatR");
-
+            // TiSDKManager.getInstance().setMask("CatR");
         } catch (Exception e) {
             Log.e(TAG, e.getMessage());
         }

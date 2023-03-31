@@ -102,6 +102,11 @@ public class MaskRecyclerView extends RecyclerView {
         View view = maskSnapHelper.findSnapView(layoutManager);
         int position = layoutManager.getPosition(view);
         Log.d(TAG,"position : "+position);
+        triggerListener.onTriggerAfterSlide(view);
+    }
+
+    public void setTriggerListener(OnItemTriggerListener triggerListener) {
+        this.triggerListener = triggerListener;
     }
 
     public static interface OnItemTriggerListener {
