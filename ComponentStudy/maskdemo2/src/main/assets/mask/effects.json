@@ -1,0 +1,240 @@
+{
+  "dataHasUpdate": false,
+  "fileVersion": 0.001,
+  "factoryVersion": 0.041,
+  "itemList": {
+    "empty_effect": {
+      "dir": "",
+      "downloaded": true,
+      "isTest": false,
+      "name": "empty_effect",
+      "order": 37,
+      "remote": false,
+      "thumb": "empty_gray.png",
+      "type": "mask",
+      "version": 0.001
+    },
+    "DogR": {
+      "dir": "DogR",
+      "downloaded": true,
+      "isTest": false,
+      "name": "DogR",
+      "order": 65,
+      "remote": false,
+      "thumb": "icon_S_Dog.png",
+      "type": "mask",
+      "version": 0.001
+    },
+    "CatR": {
+      "dir": "CatR",
+      "downloaded": true,
+      "isTest": false,
+      "name": "CatR",
+      "order": 80,
+      "remote": false,
+      "thumb": "icon_S_Cat.png",
+      "type": "mask",
+      "version": 0.001
+    },
+    "Man_BeardR": {
+      "dir": "Man_BeardR",
+      "downloaded": true,
+      "isTest": false,
+      "name": "Man_BeardR",
+      "order": 110,
+      "remote": false,
+      "thumb": "icon_S_Beard.png",
+      "type": "mask",
+      "version": 0.001
+    },
+    "RabbitR": {
+      "dir": "RabbitR",
+      "downloaded": true,
+      "isTest": false,
+      "name": "RabbitR",
+      "order": 21,
+      "remote": false,
+      "thumb": "icon_S_Rabbit.png",
+      "type": "sticker",
+      "version": 0.001
+    },
+    "PilotR": {
+      "dir": "PilotR",
+      "downloaded": true,
+      "isTest": false,
+      "name": "PilotR",
+      "order": 25,
+      "remote": false,
+      "thumb": "icon_S_Pilot.png",
+      "type": "sticker",
+      "version": 0.001
+    },
+    "SurpriseR": {
+      "dir": "SurpriseR",
+      "downloaded": true,
+      "isTest": false,
+      "name": "SurpriseR",
+      "order": 30,
+      "remote": false,
+      "thumb": "icon_S_Surprise.png",
+      "type": "sticker",
+      "version": 0.001
+    },
+    "AlieneyesR": {
+      "dir": "AlieneyesR",
+      "downloaded": true,
+      "isTest": false,
+      "name": "AlieneyesR",
+      "order": 35,
+      "remote": false,
+      "thumb": "icon_S_Alieneyes.png",
+      "type": "sticker",
+      "version": 0.001
+    },
+    "HappyR": {
+      "dir": "HappyR",
+      "downloaded": true,
+      "isTest": false,
+      "name": "HappyR",
+      "order": 40,
+      "remote": false,
+      "thumb": "icon_S_Happy.png",
+      "type": "sticker",
+      "version": 0.001
+    },
+    "ButterflyR": {
+      "dir": "ButterflyR",
+      "downloaded": true,
+      "isTest": false,
+      "name": "ButterflyR",
+      "order": 45,
+      "remote": false,
+      "thumb": "icon_S_Butterfly.png",
+      "type": "sticker",
+      "version": 0.001
+    },
+    "PartyR": {
+      "dir": "PartyR",
+      "downloaded": true,
+      "isTest": false,
+      "name": "PartyR",
+      "order": 50,
+      "remote": false,
+      "thumb": "icon_S_Party.png",
+      "type": "sticker",
+      "version": 0.001
+    },
+    "GogglesR": {
+      "dir": "GogglesR",
+      "downloaded": true,
+      "isTest": false,
+      "name": "GogglesR",
+      "order": 55,
+      "remote": false,
+      "thumb": "icon_S_Goggles.png",
+      "type": "sticker",
+      "version": 0.001
+    },
+    "FunnyfaceR": {
+      "dir": "FunnyfaceR",
+      "downloaded": true,
+      "isTest": false,
+      "name": "FunnyfaceR",
+      "order": 60,
+      "remote": false,
+      "thumb": "icon_S_Funny.png",
+      "type": "sticker",
+      "version": 0.001
+    },
+    "PolygonalR": {
+      "dir": "PolygonalR",
+      "downloaded": true,
+      "isTest": false,
+      "name": "PolygonalR",
+      "order": 70,
+      "remote": false,
+      "thumb": "icon_S_Polygonal.png",
+      "type": "sticker",
+      "version": 0.001
+    },
+    "buddyR": {
+      "dir": "buddyR",
+      "downloaded": true,
+      "isTest": false,
+      "name": "buddyR",
+      "order": 75,
+      "remote": false,
+      "thumb": "icon_S_Buddy.png",
+      "type": "sticker",
+      "version": 0.001
+    },
+    "SadR": {
+      "dir": "SadR",
+      "downloaded": true,
+      "isTest": false,
+      "name": "SadR",
+      "order": 85,
+      "remote": false,
+      "thumb": "icon_S_Sad.png",
+      "type": "sticker",
+      "version": 0.001
+    },
+    "LOLR": {
+      "dir": "LOLR",
+      "downloaded": true,
+      "isTest": false,
+      "name": "LOLR",
+      "order": 105,
+      "remote": false,
+      "thumb": "icon_S_Lol.png",
+      "type": "sticker",
+      "version": 0.001
+    },
+    "Woman_HairR": {
+      "dir": "Woman_HairR",
+      "downloaded": true,
+      "isTest": false,
+      "name": "Woman_HairR",
+      "order": 115,
+      "remote": false,
+      "thumb": "icon_S_Woman.png",
+      "type": "sticker",
+      "version": 0.001
+    },
+    "Celebrate_combR": {
+      "dir": "Celebrate_combR",
+      "downloaded": true,
+      "isTest": false,
+      "name": "Celebrate_combR",
+      "order": 90,
+      "remote": false,
+      "thumb": "icon_S_Celebrate.png",
+      "type": "comb",
+      "version": 0.001
+    },
+    "Freeze_combR": {
+      "dir": "Freeze_combR",
+      "downloaded": true,
+      "isTest": false,
+      "name": "Freeze_combR",
+      "order": 95,
+      "remote": false,
+      "thumb": "icon_S_Freeze.png",
+      "type": "comb",
+      "version": 0.001
+    },
+    "Angry_combR": {
+      "dir": "Angry_combR",
+      "downloaded": true,
+      "isTest": false,
+      "name": "Angry_combR",
+      "order": 100,
+      "remote": false,
+      "thumb": "icon_S_Angry.png",
+      "type": "comb",
+      "version": 0.001
+    }
+  },
+  "lastMaskName": "",
+  "lastStickerName": ""
+}

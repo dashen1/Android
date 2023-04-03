@@ -24,7 +24,7 @@ public class StickerFilter extends AbstractFboFilter {
                 filterContext.width,//图像宽度
                 filterContext.height,//图像高度
                 drawTiRotation,//TiRotation枚举，图像顺时针旋转的角度
-                false//图像是否左右镜像
+                true//图像是否左右镜像
       );
         return filterChain.process(textureId);
     }

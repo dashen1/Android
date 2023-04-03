@@ -109,7 +109,6 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                 imageViewParams.width = iconWidth;
                 imageViewParams.height = iconWidth;
                 holder.iconView.setLayoutParams(imageViewParams);
-
             }
         } catch (Exception e) {
             Log.e(TAG, "调整Item大小时错误: " + e.getMessage());
@@ -153,7 +152,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
             currentMainMask = itemModel.getModel().getName();
         }
         try {
-            //EffectContext.startToShowEffect(itemModel.getModel());
+            EffectContext.startToShowEffect(itemModel.getModel());
         } catch (Exception e) {
             Log.e(TAG, "set mask,error: " + e.getMessage());
         }

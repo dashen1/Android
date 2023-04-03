@@ -23,8 +23,8 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-//        FileManagerUtil.initFilePath(this);
-//        updateLocalEffect();
+        FileManagerUtil.initFilePath(this);
+        updateLocalEffect();
 
         // 关闭日志输出
         TiSDK.setLog(false);
@@ -35,7 +35,7 @@ public class MyApplication extends Application {
         // 关闭瘦脸
         TiSDKManager.getInstance().setFaceTrimEnable(false);
 
-        TiSDKManager.getInstance().setMask("CatR");
+        //TiSDKManager.getInstance().setMask("CatR");
     }
 
     private void updateLocalEffect() {
