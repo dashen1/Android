@@ -5,6 +5,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -73,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
     private long rightTime = 0;
     int leftCount = 0;
     int rightCount = 0;
+
+
 
 //    @Override
 //    public boolean onKeyDown(int keyCode, KeyEvent event) {

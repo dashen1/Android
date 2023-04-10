@@ -71,6 +71,7 @@ public class CameraSurfaceView extends GLSurfaceView implements GLSurfaceView.Re
     }
 
 
+
     private void openCameraAndPreview(int cameraId, boolean openFocus) {
         try {
 
