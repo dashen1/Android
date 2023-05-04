@@ -5,12 +5,14 @@ plugins {
 android {
     def androidVersion = rootProject.ext.android
 
-    compileSdk androidVersion.compileSdkVersion
+    // compileSdk androidVersion.compileSdkVersion
+    compileSdk 32
 
     defaultConfig {
         applicationId "com.example.kotlin"
         minSdk androidVersion.minSdkVersion
-        targetSdk androidVersion.targetSdkVersion
+        // targetSdk androidVersion.targetSdkVersion
+        targetSdk 32
         versionCode androidVersion.versionCode
         versionName androidVersion.versionName
 

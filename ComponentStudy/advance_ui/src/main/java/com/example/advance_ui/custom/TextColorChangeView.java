@@ -28,11 +28,11 @@ public class TextColorChangeView extends TextView {
     private boolean after = false;
 
     public TextColorChangeView(Context context) {
-        super(context);
+        this(context,null);
     }
 
     public TextColorChangeView(Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
+        this(context, attrs,0);
     }
 
     public TextColorChangeView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
@@ -60,7 +60,7 @@ public class TextColorChangeView extends TextView {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
+        // super.onDraw(canvas); 注释掉 不然文字会重复绘制并覆盖
         String text = getText().toString();
         if (!TextUtils.isEmpty(text)){
             int position = (int) (getWidth() * progress);

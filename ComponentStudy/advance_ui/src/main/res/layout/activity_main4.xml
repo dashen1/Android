@@ -10,8 +10,39 @@
     <LinearLayout
         android:id="@+id/llTabContainer"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="horizontal"/>
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.example.advance_ui.custom.TextColorChangeView
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="Page 1"
+            android:layout_weight="1"/>
+
+        <com.example.advance_ui.custom.TextColorChangeView
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="Page 2"
+            android:layout_weight="1"/>
+
+        <com.example.advance_ui.custom.TextColorChangeView
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="Page 3"
+            android:layout_weight="1"/>
+
+        <com.example.advance_ui.custom.TextColorChangeView
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="Page 4"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/vpPage"

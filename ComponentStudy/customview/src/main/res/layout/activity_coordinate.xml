@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.coordinate.CoordinateActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#2196F3"
+        android:text="这是顶部TextView"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        app:layout_behavior=".activity.coordinate.behavior.ScrollBehavior"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_child"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        app:layout_behavior=".activity.coordinate.behavior.RecyclerViewBehavior"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,50 @@
+package com.vtech.mobile.customview.activity.coordinate.adapter;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.vtech.mobile.customview.R;
+
+import java.util.List;
+
+import butterknife.BindView;
+
+public class CustomRecyclerAdapter extends RecyclerView.Adapter<CustomRecyclerAdapter.MyViewHolder> {
+
+    private List<String> list;
+
+    public CustomRecyclerAdapter(List<String> list) {
+        this.list = list;
+    }
+
+    @NonNull
+    @Override
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_coordinate, parent, false);
+        return new MyViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        holder.txt.setText(list.get(position));
+    }
+
+    @Override
+    public int getItemCount() {
+        return list.size();
+    }
+
+    public static class MyViewHolder extends RecyclerView.ViewHolder{
+
+        TextView txt;
+        public MyViewHolder(@NonNull View itemView) {
+            super(itemView);
+            txt = itemView.findViewById(R.id.txt);
+        }
+    }
+}
