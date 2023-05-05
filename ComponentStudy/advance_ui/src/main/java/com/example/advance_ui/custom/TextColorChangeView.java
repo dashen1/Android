@@ -64,9 +64,9 @@ public class TextColorChangeView extends TextView {
         String text = getText().toString();
         if (!TextUtils.isEmpty(text)){
             int position = (int) (getWidth() * progress);
-            if (after){
+            if (after){ // 前面高亮
                 drawText(canvas, text, 0 , position);
-            }else if (front){
+            }else if (front){ // 后面高亮
                 drawText(canvas, text, getWidth() - position , getWidth());
             }
         }
