@@ -89,11 +89,11 @@ ext {
 
     //for normal build
     //打补丁包时候这里配置基准包的全称
-    tinkerOldApkPath = "${bakPath}/app-debug-0211-11-33-02.apk"
+    tinkerOldApkPath = "${bakPath}/tinker-debug-0523-22-29-51.apk"
     //打Release补丁包时候这里配置基准包时候生成的mapping文件proguard mapping file to build //patch apk
     tinkerApplyMappingPath = "${bakPath}/"
     //打补丁包时候这里配置基准包时候生成的文件全称resource R.txt to build patch apk, must input //if there is resource changed
-    tinkerApplyResourcePath = "${bakPath}/app-debug-0211-11-33-02-R.txt"
+    tinkerApplyResourcePath = "${bakPath}/tinker-debug-0523-22-29-51-R.txt"
 
     //多渠道包时候的输出目录only use for build all flavor, if not, just ignore this field
     tinkerBuildFlavorDirectory = "${bakPath}/app-1018-17-32-47"
@@ -342,8 +342,10 @@ if (buildWithTinker()) {
              * 设置path之后会覆盖zipArtifact的配置，使用本地
              * optional，default '7za'
              * you can specify the 7za path yourself, it will overwrite the zipArtifact value
+             *
+             * Users\admin
              */
-            // path = "/Users/pary/.gradle/caches/modules-2/files-2.1/com.tencent.mm/SevenZip/1.2.17"
+             path = "/Users/admin/.gradle/caches/modules-2/files-2.1/com.tencent.mm/SevenZip/1.2.17"
         }
     }
 
