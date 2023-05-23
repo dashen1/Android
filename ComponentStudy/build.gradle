@@ -18,8 +18,9 @@ buildscript {
         constraint_layout_version = '2.1.4'
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.4'
+        classpath 'com.android.tools.build:gradle:7.1.0'
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
+        classpath ('com.tencent.tinker:tinker-patch-gradle-plugin:1.9.14.25.1')
     }
 }
 

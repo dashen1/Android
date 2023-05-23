@@ -32,6 +32,7 @@
             <option value="$PROJECT_DIR$/mylibrary" />
             <option value="$PROJECT_DIR$/opengl" />
             <option value="$PROJECT_DIR$/thirdparty" />
+            <option value="$PROJECT_DIR$/tinker" />
           </set>
         </option>
       </GradleProjectSettings>
