@@ -1,6 +1,5 @@
 plugins {
     id 'com.android.application'
-    id 'com.tencent.tinker.patch'
 }
 
 android {
@@ -13,7 +12,25 @@ android {
         versionCode 1
         versionName "1.0"
         multiDexEnabled true // 开启dex分包
+        multiDexKeepProguard file("tinker_multidexkeep.pro")
+        /**
+         * buildConfig can change during patch!
+         * we can use the newly value when patch
+         */
+        buildConfigField "String", "MESSAGE", "\"I am the base apk\""
+//        buildConfigField "String", "MESSAGE", "\"I am the patch apk\""
+        /**
+         * client version would update with patch
+         * so we can get the newly git version easily!
+         */
+        buildConfigField "String", "TINKER_ID", "\"${getTinkerIdValue()}\""
+        buildConfigField "String", "PLATFORM", "\"all\""
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    //recommend
+    dexOptions {
+        jumboMode = true
     }
 
     // 这里做签名的配置
@@ -52,13 +69,23 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    packagingOptions {
+        exclude "/META-INF/**"
+    }
 }
 
 
 
 dependencies {
 
-    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation "androidx.appcompat:appcompat:1.1.0"
     implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
@@ -67,11 +94,14 @@ dependencies {
 
     //dex分包
     implementation "androidx.multidex:multidex:2.0.1"
+    api("com.tencent.tinker:tinker-android-lib:1.9.14.25.1")
+
+    implementation("com.tencent.tinker:tinker-android-loader:${TINKER_VERSION}")
     //可选，用于生成application类
-    annotationProcessor('com.tencent.tinker:tinker-android-anno:1.9.14.25.1')
-    compileOnly('com.tencent.tinker:tinker-android-anno:1.9.14.25.1')
+    annotationProcessor("com.tencent.tinker:tinker-android-anno:${TINKER_VERSION}")
+    compileOnly("com.tencent.tinker:tinker-android-anno:${TINKER_VERSION}")
     //tinker的核心库
-    implementation('com.tencent.tinker:tinker-android-lib:1.9.14.25.1')
+    compileOnly("com.tencent.tinker:tinker-android-anno-support:${TINKER_VERSION}")
 
 }
 
@@ -89,11 +119,11 @@ ext {
 
     //for normal build
     //打补丁包时候这里配置基准包的全称
-    tinkerOldApkPath = "${bakPath}/tinker-debug-0523-22-29-51.apk"
+    tinkerOldApkPath = "${bakPath}/tinker-debug-0524-17-20-14.apk"
     //打Release补丁包时候这里配置基准包时候生成的mapping文件proguard mapping file to build //patch apk
     tinkerApplyMappingPath = "${bakPath}/"
     //打补丁包时候这里配置基准包时候生成的文件全称resource R.txt to build patch apk, must input //if there is resource changed
-    tinkerApplyResourcePath = "${bakPath}/tinker-debug-0523-22-29-51-R.txt"
+    tinkerApplyResourcePath = "${bakPath}/tinker-debug-0524-17-20-14-R.txt"
 
     //多渠道包时候的输出目录only use for build all flavor, if not, just ignore this field
     tinkerBuildFlavorDirectory = "${bakPath}/app-1018-17-32-47"
@@ -337,15 +367,16 @@ if (buildWithTinker()) {
              * optional，default '7za'
              * the 7zip artifact path, it will use the right 7za with your platform
              */
-            zipArtifact = "com.tencent.mm:SevenZip:1.2.17"
+            zipArtifact = "com.tencent.mm:SevenZip:1.1.10"
             /**
              * 设置path之后会覆盖zipArtifact的配置，使用本地
              * optional，default '7za'
              * you can specify the 7za path yourself, it will overwrite the zipArtifact value
              *
              * Users\admin
+             * Users\se0891
              */
-             path = "/Users/admin/.gradle/caches/modules-2/files-2.1/com.tencent.mm/SevenZip/1.2.17"
+             // path = "/Users/se0891/.gradle/caches/modules-2/files-2.1/com.tencent.mm/SevenZip/1.2.17"
         }
     }
 
