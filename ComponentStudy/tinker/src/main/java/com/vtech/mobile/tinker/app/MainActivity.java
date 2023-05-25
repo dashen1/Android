@@ -1,5 +1,8 @@
 package com.vtech.mobile.tinker.app;
 
+import static com.vtech.mobile.tinker.util.SampleApplicationContext.context;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -29,6 +32,17 @@ import com.tencent.tinker.loader.shareutil.ShareTinkerInternals;
 import com.vtech.mobile.tinker.R;
 import com.vtech.mobile.tinker.util.Utils;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "Tinker.MainActivity";
@@ -54,7 +68,10 @@ public class MainActivity extends AppCompatActivity {
         loadPatchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TinkerInstaller.onReceiveUpgradePatch(getApplicationContext(), Environment.getExternalStorageDirectory().getAbsolutePath() + "/tinker-debug-patch_signed_7zip.apk");
+                String path = getApplicationContext().getFilesDir().getAbsolutePath()+"/tinker-debug-patch_signed_7zip.apk";
+                Log.d("MainActivity patch",path);
+                // TinkerInstaller.onReceiveUpgradePatch(getApplicationContext(), Environment.getExternalStorageDirectory().getAbsolutePath() + "/tinker-debug-patch_signed_7zip.apk");
+                TinkerInstaller.onReceiveUpgradePatch(getApplicationContext(), path);
             }
         });
 
@@ -108,9 +125,71 @@ public class MainActivity extends AppCompatActivity {
         testButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Bug 补丁 1",Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Bug 补丁 666", Toast.LENGTH_SHORT).show();
             }
         });
+
+        Button readButton = (Button) findViewById(R.id.read_file);
+        readButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String path = getApplicationContext().getFilesDir().getAbsolutePath()+"/read.txt";
+                Log.d("MainActivity-path",path);
+                // String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/read.txt";
+                readTxtFile(path);
+                Toast.makeText(MainActivity.this, "read finish!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        Button writeButton = (Button) findViewById(R.id.write_file);
+        writeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String path = getApplicationContext().getFilesDir().getAbsolutePath()+"/write.txt";
+                Log.d("MainActivity-path",path);
+                // String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/write.txt";
+                writeFile(path);
+                Toast.makeText(MainActivity.this, "write finish", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    public static void readTxtFile(String filePath) {
+        try {
+            String encoding = "utf-8";
+            File file = new File(filePath);
+            if (file.isFile() && file.exists()) { //判断文件是否存在
+                InputStreamReader read = new InputStreamReader(
+                        new FileInputStream(file), encoding);//考虑到编码格式
+                BufferedReader bufferedReader = new BufferedReader(read);
+                String lineTxt = null;
+                while ((lineTxt = bufferedReader.readLine()) != null) {
+                    System.out.println(lineTxt);
+                }
+                read.close();
+            } else {
+                System.out.println("找不到指定的文件");
+            }
+        } catch (Exception e) {
+            System.out.println("读取文件内容出错");
+            e.printStackTrace();
+        }
+    }
+
+    public static void writeFile(String filePath) {
+        try {
+            File writeName = new File(filePath); // 相对路径，如果没有则要建立一个新的output.txt文件
+            writeName.createNewFile(); // 创建新文件,有同名的文件的话直接覆盖
+            try (FileWriter writer = new FileWriter(writeName);
+                 BufferedWriter out = new BufferedWriter(writer)
+            ) {
+                out.write("我会写入文件啦1\r\n"); // \r\n即为换行
+                out.write("我会写入文件啦2\r\n"); // \r\n即为换行
+                out.flush(); // 把缓存区内容压入文件
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void askForRequiredPermissions() {
@@ -118,7 +197,8 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         if (!hasRequiredPermissions()) {
-            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.READ_EXTERNAL_STORAGE}, 0);
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 0);
         }
     }
 
@@ -127,11 +207,11 @@ public class MainActivity extends AppCompatActivity {
             final int res = ContextCompat.checkSelfPermission(this.getApplicationContext(), Manifest.permission.READ_EXTERNAL_STORAGE);
             return res == PackageManager.PERMISSION_GRANTED;
         } else {
-            // When SDK_INT is below 16, READ_EXTERNAL_STORAGE will also be granted if WRITE_EXTERNAL_STORAGE is granted.
             final int res = ContextCompat.checkSelfPermission(this.getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE);
             return res == PackageManager.PERMISSION_GRANTED;
         }
     }
+
 
     public boolean showInfo(Context context) {
         // add more Build Info

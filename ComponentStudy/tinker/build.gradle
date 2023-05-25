@@ -3,12 +3,12 @@ plugins {
 }
 
 android {
-    compileSdk 33
+    compileSdk 32
 
     defaultConfig {
         applicationId "com.vtech.mobile.tinker"
         minSdk 21
-        targetSdk 33
+        targetSdk 32
         versionCode 1
         versionName "1.0"
         multiDexEnabled true // 开启dex分包
@@ -119,11 +119,11 @@ ext {
 
     //for normal build
     //打补丁包时候这里配置基准包的全称
-    tinkerOldApkPath = "${bakPath}/tinker-debug-0524-17-20-14.apk"
+    tinkerOldApkPath = "${bakPath}/tinker-debug-0525-14-31-56.apk"
     //打Release补丁包时候这里配置基准包时候生成的mapping文件proguard mapping file to build //patch apk
     tinkerApplyMappingPath = "${bakPath}/"
     //打补丁包时候这里配置基准包时候生成的文件全称resource R.txt to build patch apk, must input //if there is resource changed
-    tinkerApplyResourcePath = "${bakPath}/tinker-debug-0524-17-20-14-R.txt"
+    tinkerApplyResourcePath = "${bakPath}/tinker-debug-0525-14-31-56-R.txt"
 
     //多渠道包时候的输出目录only use for build all flavor, if not, just ignore this field
     tinkerBuildFlavorDirectory = "${bakPath}/app-1018-17-32-47"

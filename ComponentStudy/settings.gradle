@@ -3,17 +3,37 @@ pluginManagement {
         gradlePluginPortal()
         google()
         mavenCentral()
-        jcenter()
-        maven { url 'https://jitpack.io' }
+        maven {
+            url 'https://maven.aliyun.com/repository/public/'
+        }
+//        maven {
+//            url 'https://jitpack.io'
+//        }
+
+//        maven {
+//            url 'http://maven.aliyun.com/nexus/content/repositories/releases/'
+//            allowInsecureProtocol = true
+//        }
     }
+
 }
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
-        jcenter()
-        maven { url 'https://jitpack.io' }
+        maven {
+            url 'https://maven.aliyun.com/repository/public/'
+        }
+
+//        maven {
+//            url 'https://jitpack.io'
+//        }
+
+//        maven {
+//            url 'https://maven.aliyun.com/nexus/content/repositories/releases/'
+//            allowInsecureProtocol = true
+//        }
     }
 }
 rootProject.name = "ComponentStudy"
@@ -38,3 +58,4 @@ include ':algorithm'
 include ':certification'
 include ':customview'
 include ':tinker'
+include ':sophix'
