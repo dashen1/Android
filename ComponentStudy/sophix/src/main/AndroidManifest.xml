@@ -12,7 +12,7 @@
 
     <application
         android:name=".SophixStubApplication"
-        android:allowBackup="true"
+        android:allowBackup="false"
         tools:replace="android:allowBackup"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -32,14 +32,13 @@
 
         <meta-data
             android:name="com.taobao.android.hotfix.IDSECRET"
-            android:value="333853365-1" />
+            android:value="333853549-1" />
         <meta-data
             android:name="com.taobao.android.hotfix.APPSECRET"
-            android:value="9f61580abc67449f8ddc1418f26fafe8" />
+            android:value="69905784f56a467c9b76d008be6f823a" />
         <meta-data
             android:name="com.taobao.android.hotfix.RSASECRET"
-            android:value="MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCdRUctG2WCeuVvMzZBN/FScCBHyY/MDycwn674H5PKsO+3QRuaXo90M3L9+C5McsgpSTMiDTRr4DES0FklcYsmRZVW3gMVI7Cp2l1IVoBHR8NiDslHR6pmfYW2e7dnA24a7te1hgd1QmHCbLapyNdTl7icVKWpPoMPj1RsCsKi2LVK1PPNiK8GnkwSogZpMIqkRXa9AMStvuZhCuQQ25Wo2RdzRou71viO4GhGy82UPEbJ8zT35+Fj/lfDQvLuLxxAxdtAywiOCn5AGqMhnB5hrCF20dQIXIxcRTWIyrhdaJiKzbTpZzt965oY20lHiAdzpGELbErrMq1h+Xr4nhl/AgMBAAECggEAJ8rNlYYnCvqZbqdghOPotVkVcdR4A8OZwN3GYZVryY83OADLQSXH2jjiUYwn+sPYDUouG+GHb/wLrpz00VqHQKm+fXozAXhETNWpYJIyZtargvYGy3hAjyoXWPK4luHxS/M+tPkyjeK75XuoRBFDGi17UmLAf7AHbTpwu92FHbqdh6jmW3DZAen1K0vfGgFQ34o8A4FI9jNg6gpcMfUMrWt5IUzS6OKtn3BvfS4dosgwKJYtQ/tACP6pUyo1iSGIlLP04M9RLnfD0EgsUtJo6+5YCuRZ1qgTpV7lVJ9sLqex5+x3f84jrWS+FFN8HqN+WbAbXfezu2H7CGhhRxmU8QKBgQDTTl6lcapuxcgK55dS9JV2GcC8TxQfozcBZx2T6zhq5aglDDOXhYyvazOqE38Ru8XMwMyh+H3dUTlguNhWqcdxC6vMAqHXrBqR3ZmtTvQxAmGjI2svBVJbKlMAPN/+vByJqe9L781RpKvm+4/HpbSEAxCOoe0E9TgQYJu1telOFQKBgQC+iQmuWYinRw8k1a6evTDZrTT672bhAw2qqKuaflu1TLbh1zgwLe3NOo26cHkPcjt03gqaILjn8NMxvYJn2TcC5OAcMwLnXjuZI9rVWx7OnRZADxhkL5DHmtORST/2tAqPRS6TRagQJKTEixmKbh0L/WZS84f0TkKkgJ5ueUiCQwKBgQCyvCis0w+x8VQ7fRfwEHjYVAJGhrFj7YAajKllNGMdcLMg20hMk6ejvg8Ofr1ON8GhZzfwjauRaCIboV9FNwk/ovqnb1aMgsRau9JA2XcOeZAzGUORm3PFL3DT06o4489T1s1WMzo+JAdQM1u0KYMe4yS/MVK2jeHlYIJ1WrFE3QKBgG3aIpvEATa4kHGjRVc+KuEFrOsUhhMrKIEBWFbtjUBdJ3/UDxAwGs/dd4NLf3C5YrBBqIkuXo1TWuBtq7bmFIJ1pQR9IKp2uRPVCUFDlOJ4zTBHw79XcTiz+lDkk51QNlpd/7lnSrtr9RdgP2yBifu0sH8Y64Sebmvbv/xfrr9zAoGBAKQZlaVE5KbjwK0cVvvibNrhOs4fKRS27/9QWEyQR6+4F4WWpwTW3YfHvjj85VVYP0iePXiO6xKFBnuKh6nmZYhW5xG6Es8tVVEZC9qZ1xF0R1CwtjMS5qGR2nZJ/wS1sQlWTam4QCj2fFAjrCuTd+A9d8J9Il0gZjQ3Qu++/F28"/>
-
+            android:value="MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCwdFnAk7D9ERtOrZ5keS4Dr+wVEwPhIWKTepFbG3V86xC7lVayB+6G8LT2DPhBDgBJD3MSyKhlObR116H0XVVBreFJIM0GiLxzRm2Mz8jAGrJ0vKnOX064F6waoEJCj0oOigMuLe8AKVTakQJtyRRYlmviwpyB/8Iaz/3nLm1oSWzMYx58rxHrPNUxDsCrlBlDmiqlWdZGTNFNaZ/RwDoBZPmPoMb19G610AV/ciFx2i0jTcQQY5vjqTH4xAPlL1Klqttais1dJaBiGERYLR1T4Y4jFjJ0eexSxo/fq2PZ37Mj3Va9TTniqPE0sPXs+jS3dh6yITSGuDmKWXSQ4qMXAgMBAAECggEAeCqUYNBzrLP0q80S3AumaX5pwSRU9QE+V38V9Dyr8ylGGOknxFAggab1JcdJXUxCp36s+DLMczssCUCTG45gHD1k+d8roPKHm91vh4CNjz3fIB7HaTKAsl/0paFT3m4kmeglKFLBu5NqJPqx88AHahjuWdv8p49cSdQxbjmw6l5M4ip0tHDGMQzE1twjLhUEDwGxQ4T8BPFINNW+sS6GO0xUAESfq/Z9/BjYEiS5hUP2jagfDZa9s4UfK4nn2sQiy57eNJHC5dSxz+VU7br4u/NL0UkYxjxF1qU2OYECEfoN4TSvZgC9SOGIUFGxHjFVYsQ7mhM7QEN5IKwDsZ3QOQKBgQDb4kP42xb5zhAdc5d9mGOOb5O+jW8F0M4I5Wx0b3/Lt1WUFfXhZ61zD56etm6JahREZmIq+K1WFW1ZVrdOXXvJZ5D9UxCfRBcfRsUdqnDnfDH92+1MRfpm4TLYJNfJAwh9OxYJ/GZKWOi4GxjpMBDIUpRLphB5R4yTlA9ZOVNzlQKBgQDNb/S992sBlwpTZeJZ+iyT9a3el7wyAp7D90dAavgTVH2WZjalp3rgTvNX9TpLJt7YH4i/LNJGF0UykwD+fLeSK0iNkCuVccDqogPTA50wEpfzOxSVCJs5sJX6eAlBYEi+FxBt66DRcCn5o3latP5fmL4oBHACTPA0ZUvGG7sQ+wKBgF3mQ2a7kRU+pW0eVtxAvosuJObkGTxfjg0IhIc4sld5xGcH9ce7cbvIONHIUG4ISf1nx5ZYOhWf8uGLAZ7KlzlMLAOyfE+3UTR/EWB4z9xbEjI5wB2paKSUmRTqrufdjruEBwZergQj8cXldH7oktIpScEAetp/7o17Vg6hR3z9AoGAGRlvlnIPIc+ZVF0jTYjyP1WJ26NAO//z889XZjhrfLka6vAsBwsySQt8UafFan8iRNd9dpX8TtHzA13QhkcoinQ9VgZiPMz8G+6Vdwd/AeuTowT528eEZ4T6nfJidxlTad4ZhMSADnacukJNxlZMqdNYkD0SjkVmJ5CktFyY+1cCgYEA2Cj0DtGQYtBYfX9s+fKauI/zwKw7fpe/Ly+PSmKc/JL4jCcbwqyDw+Hy7+85CYAFLBoLf75QKU/h63HBDqJDFbfLxU7lwsO67MW2fI2UH1CX3s6XHeLIgqNlsnkHETEM03CWcW+S2qfH87R/nlhEL69thSugPBKNbALWzwS1Q9k=" />
 
     </application>
 
