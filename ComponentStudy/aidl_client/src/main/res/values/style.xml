@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--实现BottomSheetDialog圆角效果-->
+    <style name="BottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/bottomSheetStyleWrapper</item>
+    </style>
+
+    <style name="bottomSheetStyleWrapper" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+<!--    <style name="BottomSheet.StyleDialog" parent="BottomSheet.Dialog">-->
+<!--        <item name="android:backgroundDimAmount">0.5</item>-->
+<!--        <item name="android:windowAnimationStyle">@style/BottomSheet.Animation</item>-->
+<!--        <item name="android:textColorPrimary">@color/colorTitle</item>-->
+<!--        <item name="android:textColorSecondary">@color/colorSubtitle</item>-->
+<!--        <item name="android:textSize">15sp</item>-->
+<!--        <item name="android:textColorHint">#42ffffff</item>-->
+<!--        <item name="bs_dialogBackground">@color/colorWhite</item>-->
+<!--        <item name="bs_dividerColor">@color/colorLine</item>-->
+<!--        <item name="bs_numColumns">5</item>-->
+<!--        <item name="bs_listStyle">@style/BttomSheet.List</item>-->
+<!--    </style>-->
+</resources>

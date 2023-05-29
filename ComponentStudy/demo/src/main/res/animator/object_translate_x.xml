@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objectAnimator xmlns:android="http://schemas.android.com/apk/res/android"
+    android:propertyName="scaleX"
+    android:duration="3000"
+    android:valueFrom="1f"
+    android:valueTo="3f"
+    android:valueType="floatType"
+    android:repeatCount="infinite"
+    android:repeatMode="reverse">
+    <!--属性动画 xml形式-->
+</objectAnimator>
