@@ -16,6 +16,10 @@
             android:name="string"
             android:value="string"/>
 
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="${UMENG_CHANNEL_VALUE}" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

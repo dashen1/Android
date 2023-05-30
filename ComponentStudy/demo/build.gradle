@@ -13,14 +13,40 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
+
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a"
+            moduleName "app"
+        }
+
     }
+
+//    signingConfigs {
+//        debug {
+//            storeFile file('D:\\KCReleaseKey\\title.release.keystore')
+//            storePassword 'innotabmax'
+//            keyAlias 'releasekey'
+//            keyPassword 'dcd6042eebdcac8d56607d0ee4e1800790206837'
+//        }
+//
+//        release {
+//            storeFile file('D:\\KCReleaseKey\\title.release.keystore')
+//            storePassword 'innotabmax'
+//            keyAlias 'releasekey'
+//            keyPassword 'dcd6042eebdcac8d56607d0ee4e1800790206837'
+//        }
+//    }
 
     buildTypes {
         release {
+            // 是否开启混淆
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -29,6 +55,123 @@ android {
     dataBinding {
         enabled = true
     }
+    // 或者
+//    buildFeatures {
+//        //noinspection DataBindingWithoutKapt
+//        dataBinding true
+//    }
+
+    sourceSets {
+        main {
+            res.srcDirs = ['src/main/res']
+            jniLibs.srcDirs = ['jniLibs']   // 这里设置了 ndk 才能
+        }
+    }
+
+    // Specifies one flavor dimension.
+    // 多渠道打包 方式 1
+//    flavorDimensions "version"
+//    productFlavors {
+//        demo {
+//            // Assigns this product flavor to the "version" flavor dimension.
+//            // If you are using only one dimension, this property is optional,
+//            // and the plugin automatically assigns all the module's flavors to
+//            // that dimension.
+//            dimension "version"
+//            applicationIdSuffix ".demo"
+//            versionNameSuffix "-demo"
+//        }
+//        full {
+//            dimension "version"
+//            applicationIdSuffix ".full"
+//            versionNameSuffix "-full"
+//        }
+//    }
+
+    flavorDimensions "version"
+    // 多渠道打包 方式 2
+    productFlavors {
+        kuan {
+            dimension "version"
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "kuan"]
+        }
+        xiaomi {
+            dimension "version"
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xiaomi"]
+        }
+        qh360 {
+            dimension "version"
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "qh360"]
+        }
+        baidu {
+            dimension "version"
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "baidu"]
+        }
+        wandoujia {
+            dimension "version"
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "wandoujia"]
+        }
+    }
+
+    // 多渠道打包 方式 3
+//    productFlavors {
+//        kuan {}
+//        xiaomi {}
+//        qh360 {}
+//        baidu {}
+//        wandoujia {}
+//    }
+//
+//    productFlavors.all {
+//        flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+//    }
+
+    //
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def formattedDate = new Date().format('yyyyMMdd')
+            def flavor = variant.name
+            def versionName = variant.versionName
+            outputFileName = "Component_${formattedDate}_${versionName}_${buildType.name}_${flavor}Unsign.apk"
+        }
+    }
+
+}
+
+
+// 解析工程之前会执行
+beforeEvaluate{
+    println 'start beforeEvaluate'
+}
+
+// 配置完成之后执行
+afterEvaluate{
+    println 'start afterEvaluate'
+}
+
+task upgradeDemoVersion{
+    println 'start upgradeKCVersion'
+}
+
+task testDemoVersion{
+    // doFirst和doLast 只有手动执行任务时才会执行 .\gradlew testDemoVersion
+    doFirst{
+        println 'start doFirst'
+    }
+    // 在配置阶段就会执行
+    println 'start testDemoVersion'
+    doLast{
+        println 'start doLast'
+    }
+}
+
+tasks.whenTaskAdded{ task ->
+    println ' whenTaskAdded'
+    println task.name
+}
+
+gradle.buildFinished{
+    println ' buildFinished'
 }
 
 dependencies {
