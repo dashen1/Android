@@ -1,10 +1,10 @@
 project.ext {
 
     android = [
-            compileSdkVersion: 30,
-            buildToolsVersion: "30.0.2",
+            compileSdkVersion: 32,
+            buildToolsVersion: "32.0.0",
             minSdkVersion    : 21,     //04 June 2021 JY update to 23 to follow official define,09 Mar 2021 Lily edit as 21 for using glideTransform lib; 17 Mar 2021 JY Removed glideTransform but remain min SDK as 21 because TiSDK will crash in SDK 19.
-            targetSdkVersion : 30,  // August 2020 google play require upper than 29
+            targetSdkVersion : 32,  // August 2020 google play require upper than 29
             versionCode      : 1,
             versionName      : "1.0",
             minifySetting    : false,

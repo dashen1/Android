@@ -12,6 +12,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.text.TextUtils;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,6 +22,7 @@ import java.util.HashMap;
 
 public class StudentsProvider extends ContentProvider {
 
+    private final String TAG = "StudentsProvider";
     static final String PROVIDER_NAME = "com.example.componentstudy.contentprovider.StudentsProvider";
     static final String URL = "content://" + PROVIDER_NAME + "/students";
     static final Uri CONTENT_URI = Uri.parse(URL);
@@ -83,6 +85,7 @@ public class StudentsProvider extends ContentProvider {
     public Cursor query(@NonNull Uri uri, @Nullable String[] projection, @Nullable String selection, @Nullable String[] selectionArgs, @Nullable String sortOrder) {
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
         qb.setTables(STUDENT_TABLE_NAME);
+        Log.i(TAG,"query : "+uri+" == "+uriMatcher.match(uri));
         switch (uriMatcher.match(uri)) {
             case STUDENTS:
                 qb.setProjectionMap(STUDENTS_PROJECTION_MAP);

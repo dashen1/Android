@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -31,6 +32,7 @@ public class ContentProviderActivity extends AppCompatActivity {
         Uri uri = getContentResolver().insert(StudentsProvider.CONTENT_URI, values);
 
         Toast.makeText(getBaseContext(), uri.toString(),Toast.LENGTH_LONG).show();
+
     }
 
     @SuppressLint("Range")
